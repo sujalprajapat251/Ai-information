@@ -1,11 +1,10 @@
 import React from 'react'
+import Introduction from '../Component/Home/Introduction'
 
 const Home = () => {
   return (
     <div className=''>
-        <div className='bg-themedark w-full h-15'>s</div>
-        <div className='bg-themeblack w-full h-15'>s</div>
-      Home
+        <Introduction/>
     </div>
   )
 }
