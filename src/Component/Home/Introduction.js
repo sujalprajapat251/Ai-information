@@ -8,9 +8,14 @@ import person2 from '../../Asset/Home/person2.webp'
 import person3 from '../../Asset/Home/person3.png'
 import person4 from '../../Asset/Home/person4.webp'
 import person5 from '../../Asset/Home/person5.webp'
-
-
+import ai1 from '../../Asset/Home/ai1.png'
+import ai2 from '../../Asset/Home/ai2.webp'
+import ai3 from '../../Asset/Home/ai3.png'
+import ai4 from '../../Asset/Home/ai4.png'
+import ai5 from '../../Asset/Home/ai5.png'
+import ai6 from '../../Asset/Home/ai6.png'
 import "aos/dist/aos.css";
+import "../../style/Sujal.css"
 import Stack from "../../reactBeats/Stack";
 import { CanvasConfettiCursor } from "../../reactBeats/CanvasConfettiCursor";
 const images = [
@@ -21,16 +26,37 @@ const images = [
     { id: 5, img: person5 }
 
 ];
+const aiDetails = [{ title: 'Generative AI', img: ai1 }, { title: 'Data Science', img: ai2 }, { title: 'Inference', img: ai3 }, { title: 'Conversational AI', img: ai4 }, { title: 'Vision AI', img: ai5 }, { title: 'Cybersecurity AI', img: ai6 }]
+
 const Introduction = () => {
     useEffect(() => {
         Aos.init({ duration: 2000, once: true }); // 1s animation, triggers once
     }, [])
     const containerRef = useRef(null);
+    const [size, setSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 425) {
+                setSize({ width: 200, height: 200 });
+            } else {
+                setSize({ width: 400, height: 400 });
+            }
+        };
+
+        // Run once on mount
+        handleResize();
+
+        // Listen for resize
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <>
             <div
                 ref={containerRef}
-                className="relative xl:h-[900px] md:h-[600px] h-[] w-full bg-themeblack overflow-hidden"
+                className="relative xl:h-[900px] md:h-[600px] h-[500px] w-full bg-themeblack overflow-hidden"
             >
                 {/* Particle Background */}
                 <div className="absolute inset-0 z-0">
@@ -48,46 +74,60 @@ const Introduction = () => {
                 </div>
 
                 {/* Foreground Text */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 px-8 xl:w-[50%] md:w-[70%] m-auto flex items-center justify-center  flex-col">
-                    <h2 className="2xl:text-5xl md:text-3xl  text-lg font-semibold text-white text-center" data-aos="fade-up">OpenAI, <span className="text-themedark fond-extrabold">NVIDIA</span> Propel AI Innovation With New Optimized Open Models</h2>
-                    <p className="text-[#f0f0f0] text-center xl:text-base text-normal   " data-aos="fade-up" >New <span className="text-themedark">NVIDIA</span> technologies are enabling instant world reconstruction, spatial reasoning, and large-scale simulation on NVIDIA DGX Cloud and NVIDIA RTX PRO Blackwell servers.</p>
-                    <p className="text-[#f0f0f0] text-center" data-aos="fade-up">Advanced blueprints, vision language models and synthetic data generation extensions from <span className="text-themedark">NVIDIA</span> Metropolis enhance productivity and improve safety across environments..</p>
-                    <div className="w-[200px] bg-themedark rounded-full text-white hover:bg-white hover:text-themedark hover:font-extrabold mt-[20px]  cursor-pointer" data-aos="fade-up">
-                        <p className="p-3 text-lg text-center">Contact Us</p>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 2xl:px-8 px-3 xl:w-[50%] md:w-[70%] w-full m-auto flex items-center justify-center  flex-col ">
+                    <h2 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white text-center md:mb-5 mb-3 2xl:leading-[60px]" data-aos="fade-up">OpenAI, <span className="text-themedark fond-extrabold">NVIDIA</span> Propel AI Innovation With New Optimized Open Models</h2>
+                    <p className="text-[#f0f0f0] text-center sm:text-base text-xs  md:mb-5 mb-3  px-5" data-aos="fade-up" >New <span className="text-themedark">NVIDIA</span> technologies are enabling instant world reconstruction, spatial reasoning, and large-scale simulation on NVIDIA DGX Cloud and NVIDIA RTX PRO Blackwell servers.</p>
+                    <p className="text-[#f0f0f0] text-center sm:text-base text-xs md:mb-5 mb-3  px-5" data-aos="fade-up">Advanced blueprints, vision language models and synthetic data generation extensions from <span className="text-themedark">NVIDIA</span> Metropolis enhance productivity and improve safety across environments..</p>
+                    <div className="md:w-[200px] w-[100px] bg-themedark rounded-full text-white hover:bg-white hover:text-themedark hover:font-extrabold mt-[20px]  cursor-pointer" data-aos="fade-up">
+                        <p className="p-3 md:text-lg text-sm text-center">Contact Us</p>
                     </div>
                 </div>
             </div>
-            {/* <div className="bg-black">
-        <CurvedLoop
-                marqueeText="OpenAI’s New Open-Source Models Accelerated on RTX AI PCs"
-                speed={5}
-                curveAmount={600}
-                direction="left"
-                interactive={false}
-                className="bg-black text-5xl"
-            />
-        </div> */}
+
 
 
             {/* second section */}
 
             <section className="bg-black py-[40px]">
-                <div className="flex flex-wrap justify-center items-center container">
+                <div className="lg:flex flex-wrap justify-center items-center container">
                     <div className="px-8 lg:w-1/2">
-                        <h2 className="text-[50px] font-semibold text-white " data-aos="fade-up"><span className="text-themedark fond-extrabold">NVIDIA</span> at SIGGRAPH Research Special Address</h2>
-                        <p className="text-[#f0f0f0]" data-aos="fade-up">New <span className="text-themedark">NVIDIA</span> technologies are enabling instant world reconstruction, spatial reasoning, and large-scale simulation on NVIDIA DGX Cloud and NVIDIA RTX PRO Blackwell servers.</p>
+                        <h2 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white md:mb-5 mb-3 2xl:leading-[60px]" data-aos="fade-up"><span className="text-themedark fond-extrabold">NVIDIA</span> at SIGGRAPH Research Special Address</h2>
+                        <p className="text-[#f0f0f0]  sm:text-base text-xs md:mb-5 mb-3  " data-aos="fade-up">New <span className="text-themedark">NVIDIA</span> technologies are enabling instant world reconstruction, spatial reasoning, and large-scale simulation on NVIDIA DGX Cloud and NVIDIA RTX PRO Blackwell servers.</p>
                     </div>
-                    <div>
-                        <Stack
-                            randomRotation={true}
-                            sensitivity={180}
-                            sendToBackOnClick={false}
-                            cardDimensions={{ width: 400, height: 400 }}
-                            cardsData={images}
-                        />
-                    </div>
+                    <>
+                        {/* Large screen */}
+                        <div className="hidden sm:block">
+                            <Stack
+                                cardDimensions={{ width: 400, height: 400 }}
+                                cardsData={images}
+                            />
+                        </div>
+
+                        {/* Small screen */}
+                        <div className="block sm:hidden">
+                            <Stack
+                                cardDimensions={{ width: 250, height: 250 }}
+                                cardsData={images}
+                            />
+                        </div>
+                    </>
                 </div>
             </section>
+            <div className="bg-themeblack">
+            <h2 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white text-center md:mb-5 mb-3 2xl:leading-[60px] py-5" data-aos="fade-up"><span className="text-themedark fond-extrabold">Artificial </span> Intelligence</h2>
+                <article class="card__container container py-9 ">
+                    {aiDetails.map((item) => {
+                        return (
+                            <div class="card mobile p-3" tabindex="0" style={{backgroundImage:`url(${item.img})`}}>
+                                <div className="relative z-1">
+                                <h3 className="text-3xl text-white text-center">{item.title}</h3>
+
+                                </div>
+                            </div>
+                        )
+                    })}
+                </article>
+            </div>
 
         </>
 
