@@ -1,12 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Hyperspeed from '../Animation/HyperSpeed'
 import img1 from '../Asset/About/about_bg.webp'
 import img2 from '../Asset/About/about-bg2.webp'
 import img3 from '../Asset/About/about_bg3.webp'
 import { FaArrowRight } from 'react-icons/fa'
 import AboutCard from '../Animation/AboutCard'
+import team from '../Asset/About/about_group.jpg'
+import { BiMinus, BiPlus } from 'react-icons/bi'
+import acc from '../Asset/About/about_acc.webp'
+
 
 const About = () => {
+
+  const accordionData = [
+    {
+      title: "Openness",
+      content:
+        "We believe the latest advancements in AI should be published and shared for the community to learn from and build upon.",
+    },
+    {
+      title: "Collaboration",
+      content:
+        "We collaborate openly with both internal and external partners to share knowledge and cultivate diverse perspectives and needs.",
+    },
+    {
+      title: "Excellence",
+      content:
+        "There’s no shortage of new possibilities to explore in AI. While our researchers focus on what they believe will have the most positive impact on people and society, our engineers are working to deliver meaningful advancements in products and experiences for all people.",
+    },
+    {
+      title: "Scale",
+      content:
+        "To bring the benefits of AI to more people and improve accessibility, our research must account for both large scale data and computational needs.",
+    },
+  ];
+
+  const [openIndexes, setOpenIndexes] = useState(
+    accordionData.map((_, i) => i)
+  );
+
+  const toggle = (index) => {
+    if (openIndexes.includes(index)) {
+      setOpenIndexes(openIndexes.filter((i) => i !== index)); 
+    } else {
+      setOpenIndexes([...openIndexes, index]); 
+    }
+  };
+
   return (
     <div>
       <section className="relative bg-themeblack overflow-hidden h-[220px] sm:h-[350px] md:h-[450px] lg:h-[600px]">
@@ -77,6 +117,75 @@ const About = () => {
               </div>
 
               <AboutCard/>
+          </div>
+      </section>
+
+      <section className='bg-[#121212]'>
+         <div className='pt-10'>
+              <div className='container mx-auto'>
+                 <div className='flex lg:flex-nowrap flex-wrap rounded-[30px] overflow-hidden 2xl:mx-10 mx-5'>
+                     <div className="lg:w-1/2 w-full">
+                         <img src={team} alt="" className='h-full object-cover'/>
+                     </div>
+                     <div className='lg:w-1/2 w-full bg-[#222222]'>
+                         <div className='sm:p-[65px] sx:p-[40px] p-[20px] text-white'>
+                            <p>Mentorship programs</p>
+                            <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sx:leading-[46px] leading-[28px] mt-4">Get hands-on experience in AI <br /> research</h3>
+                            <p className='sm:text-[16px] text-[14px] mt-10 sm:pt-4'>We’re passionate about introducing people to the extraordinary world of AI. Our AI Mentorship (AIM) and EMEA programs let PhD candidates conduct open science research in collaboration with their university, academic advisor, and AI at Meta mentor participants as full-time AI at Meta employees.</p>
+                            <p className='sm:text-[16px] text-[14px] mt-5'>We currently have agreements in place with prestigious universities in the United States, France, Israel and the United Kingdom.</p>
+                            <p className='mt-10 sm:pt-4 sm:text-[18px] text-[16px] font-[600]'>For more about these programs, reach out to us at MetaAIM@meta.com</p>
+                         </div>
+                     </div>
+                 </div>
+              </div>
+         </div>
+      </section>
+
+      <section className='bg-[#121212]'>
+          <div className='pt-[70px]'>
+              <div className="container mx-auto">
+                 <div className='text-white text-center'>
+                    <p>People and culture</p>
+                    <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] mt-4">The freedom to explore, <br /> discover and apply AI at scale</h3>
+                    <p className='sm:text-[20px] text-[18px] mt-11'>At Meta, we work across a set of key principles:</p>
+                 </div>
+                  <div className="flex justify-center mt-5">
+                     <div className="2xl:w-4/5 w-full">
+                       <div className="flex lg:flex-nowrap flex-wrap">
+                         <div className="lg:w-1/2 w-full mt-8 lg:px-5 px-5">
+                           <div>
+                             <div className="border-t border-[#7e7d7d]"></div>
+                             {accordionData.map((item, index) => {
+                               const isOpen = openIndexes.includes(index);
+                               return (
+                                 <div key={index}>
+                                   {/* Header */}
+                                   <button onClick={() => toggle(index)} className="flex w-full my-8 justify-between text-white sm:text-[20px] text-[18px] items-center text-left font-semibold text-lg focus:outline-none">
+                                     {item.title}
+                                     {isOpen ? (
+                                       <BiMinus className="w-5 h-5 border-[1px] rounded-full text-white" />
+                                     ) : (
+                                       <BiPlus className="w-5 h-5 border-[1px] rounded-full text-white" />
+                                     )}
+                                   </button>
+               
+                                   {/* Content with transition */}
+                                   <div className={`overflow-hidden transition-all duration-500 ease-in-out ${ isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
+                                      <p className="mt-2 text-white mb-7">{item.content}</p>
+                                   </div>
+                                   <div className="border-t border-[#7e7d7d]"></div>
+                                 </div>
+                               );
+                             })}
+                           </div>
+                         </div>
+                         <div className="lg:w-1/2 w-full mt-8 lg:px-7 px-5">
+                             <img src={acc} alt="" className='lg:h-[800px] sm:h-[700px] sx:h-[450px] h-[300px] w-full object-cover'/>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+               </div>
           </div>
       </section>
     </div>
