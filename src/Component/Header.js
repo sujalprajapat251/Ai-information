@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown, IoIosSearch, IoIosMenu, IoIosClose } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,14 +33,14 @@ const Header = () => {
           <button className="bg-[rgba(241,243,244,0.08)] p-2 rounded-full hover:bg-[rgba(241,243,244,0.12)] transition"><IoIosSearch /></button>
           <button onClick={toggleMobileMenu} className="bg-[rgba(241,243,244,0.08)] p-2 rounded-full hover:bg-[rgba(241,243,244,0.12)] transition">{isMobileMenuOpen ? <IoIosClose /> : <IoIosMenu />}</button>
         </div>
-      </div>
+      </div>  
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-[#060606] border-t border-gray-800 z-50">
           <nav className="flex flex-col p-4 space-y-2">
             <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm">Models</a>
             <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm">Research</a>
             <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm">Science</a>
-            <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm">About</a>
+            <Link to="/about" className="hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm">About</Link>
             <div className="border-t border-gray-800 mt-4 pt-4 space-y-2">
               <button className="w-full bg-[rgba(241,243,244,0.08)] font-medium py-3 px-4 rounded-lg text-sm hover:bg-[rgba(241,243,244,0.12)] transition">Build with Gemini</button>
               <button className="w-full bg-[rgba(241,243,244,0.08)] font-medium py-3 px-4 rounded-lg text-sm hover:bg-[rgba(241,243,244,0.12)] transition">★ Try Gemini</button>

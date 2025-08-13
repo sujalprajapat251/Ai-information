@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Hyperspeed from '../Animation/HyperSpeed'
 import img1 from '../Asset/About/about_bg.webp'
 import img2 from '../Asset/About/about-bg2.webp'
@@ -11,9 +11,25 @@ import acc from '../Asset/About/about_acc.webp'
 import hello from '../Asset/About/about_industri.jpg'
 import AboutSqure from '../Animation/AboutSqure'
 import Threads from '../Animation/AboutSqure'
+import TextType from '../Animation/TextType'
+import { JigsawPuzzle } from 'react-jigsaw-puzzle'
+import 'react-jigsaw-puzzle/lib/jigsaw-puzzle.css';
+import Demo from '../Animation/Demo'
+import * as THREE from "three";
+import BIRDS from "vanta/dist/vanta.birds.min";
 
 
 const About = () => {
+
+  const [key, setKey] = useState(0);
+  const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setKey(k => k + 1); 
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
 
   const accordionData = [
     {
@@ -50,12 +66,13 @@ const About = () => {
     }
   };
 
+
   return (
-    <div>
-      <section className="relative bg-themeblack overflow-hidden h-[220px] sm:h-[350px] md:h-[450px] lg:h-[600px]">
+    <div className='overflow-hidden'> 
+      <section className="relative bg-black overflow-hidden h-[220px] sm:h-[350px] md:h-[450px] lg:h-[600px]">
         {/* Background Hyperspeed */}
         <div className="absolute inset-0 z-0">
-          <Hyperspeed
+            <Hyperspeed
               className="w-full h-full"
               effectOptions={{
               onSpeedUp: () => {},
@@ -86,7 +103,7 @@ const About = () => {
               colors: {
                 roadColor: 0x141414,
                 islandColor: 0x141414,
-                background: 0x000000,
+                background: 0x060606,
                 shoulderLines: 0xFFFFFF,
                 brokenLines: 0xFFFFFF,
                 leftCars: [0xD856BF, 0x6750A2, 0xC247AC],
@@ -95,20 +112,33 @@ const About = () => {
               }
             }}
           />
+
         </div>
+
+      
 
         {/* Foreground text */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
           <p className="uppercase text-[#9aa0a6] text-[12px] sm:text-[14px] md:text-[16px] sm:mb-6 mb-3">
             Our mission
           </p>
-          <h2 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[48px] sx:leading-[35px] leading-[28px]">
-            Build AI responsibly to benefit humanity
-          </h2>
+          <TextType
+            text={[
+              "Build AI responsibly to benefit humanity",
+              "Create ethical AI that benefits all humanity.",
+            ]}
+            typingSpeed={75}
+            pauseDuration={1000}
+            showCursor={true}
+            className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[48px] sx:leading-[35px] leading-[28px]"
+            loop={true}
+          />
+
+
         </div>
       </section>
 
-      <section className='bg-[#121212] sm:pt-[70px] pt-[50px] pb-[50px]'>
+      <section className='bg-black sm:pt-[70px] pt-[50px] pb-[50px] overflow-hidden'>
           <div className='container mx-auto'>
               <div className='text-center'>
                 <h2 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[42px] sx:leading-[35px] leading-[28px]">
@@ -123,20 +153,25 @@ const About = () => {
           </div>
       </section>
 
-      <section className='bg-[#121212]'>
-         <div className='pt-10'>
+      <section className='bg-black overflow-hidden'>
+         <div className='sm:pt-10 pt-5'>
               <div className='container mx-auto'>
                  <div className='flex lg:flex-nowrap flex-wrap rounded-[30px] overflow-hidden 2xl:mx-10 mx-5'>
-                     <div className="lg:w-1/2 w-full">
-                         <img src={team} alt="" className='h-full object-cover'/>
-                     </div>
+                   <div className="lg:w-1/2 w-full relative overflow-hidden" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+                      <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${   hovered ? "opacity-100" : "opacity-0" }`}>
+                         <img src={team} alt="Team Merged" className="w-full h-full object-cover"/>
+                      </div>
+                      <div className={`transition-opacity duration-700 ease-in-out ${ hovered ? "opacity-0" : "opacity-100" }`}>
+                         <JigsawPuzzle imageSrc={team} rows={3} columns={3} onSolved={() => alert("Puzzle solved!")} className="h-full object-cover"/>
+                      </div>
+                   </div>
                      <div className='lg:w-1/2 w-full bg-[#222222]'>
                          <div className='sm:p-[65px] sx:p-[40px] p-[20px] text-white'>
-                            <p>Mentorship programs</p>
-                            <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sx:leading-[46px] leading-[28px] mt-4">Get hands-on experience in AI <br /> research</h3>
-                            <p className='sm:text-[16px] text-[14px] mt-10 sm:pt-4'>We’re passionate about introducing people to the extraordinary world of AI. Our AI Mentorship (AIM) and EMEA programs let PhD candidates conduct open science research in collaboration with their university, academic advisor, and AI at Meta mentor participants as full-time AI at Meta employees.</p>
-                            <p className='sm:text-[16px] text-[14px] mt-5'>We currently have agreements in place with prestigious universities in the United States, France, Israel and the United Kingdom.</p>
-                            <p className='mt-10 sm:pt-4 sm:text-[18px] text-[16px] font-[600]'>For more about these programs, reach out to us at MetaAIM@meta.com</p>
+                            <p data-aos="fade-left">Mentorship programs</p>
+                            <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sx:leading-[46px] leading-[28px] mt-4" data-aos="fade-left" >Get hands-on experience in AI <br /> research</h3>
+                            <p className='sm:text-[16px] text-[14px] mt-10 sm:pt-4' data-aos="fade-left" >We’re passionate about introducing people to the extraordinary world of AI. Our AI Mentorship (AIM) and EMEA programs let PhD candidates conduct open science research in collaboration with their university, academic advisor, and AI at Meta mentor participants as full-time AI at Meta employees.</p>
+                            <p className='sm:text-[16px] text-[14px] mt-5' data-aos="fade-left" >We currently have agreements in place with prestigious universities in the United States, France, Israel and the United Kingdom.</p>
+                            <p className='mt-10 sm:pt-4 sm:text-[18px] text-[16px] font-[600]' data-aos="fade-left" >For more about these programs, reach out to us at MetaAIM@meta.com</p>
                          </div>
                      </div>
                  </div>
@@ -144,13 +179,13 @@ const About = () => {
          </div>
       </section>
 
-      <section className='bg-[#121212]'>
-          <div className='pt-[70px]'>
+      <section className='bg-black overflow-hidden'>
+          <div className='sm:pt-[70px] pt-[40px]'>
               <div className="container mx-auto">
                  <div className='text-white text-center'>
                     <p>People and culture</p>
-                    <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] mt-4">The freedom to explore, <br /> discover and apply AI at scale</h3>
-                    <p className='sm:text-[20px] text-[18px] mt-11'>At Meta, we work across a set of key principles:</p>
+                    <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] leading-[28px] mt-4">The freedom to explore, <br /> discover and apply AI at scale</h3>
+                    <p className='sm:text-[20px] text-[18px] sm:mt-11 mt-5'>At Meta, we work across a set of key principles:</p>
                  </div>
                   <div className="flex justify-center mt-5">
                      <div className="2xl:w-4/5 w-full">
@@ -161,7 +196,7 @@ const About = () => {
                              {accordionData.map((item, index) => {
                                const isOpen = openIndexes.includes(index);
                                return (
-                                 <div key={index}>
+                                 <div key={index} data-aos="fade-right">
                                    {/* Header */}
                                    <button onClick={() => toggle(index)} className="flex w-full my-8 justify-between text-white sm:text-[20px] text-[18px] items-center text-left font-semibold text-lg focus:outline-none">
                                      {item.title}
@@ -182,8 +217,8 @@ const About = () => {
                              })}
                            </div>
                          </div>
-                         <div className="lg:w-1/2 w-full mt-8 lg:px-7 px-5">
-                             <img src={acc} alt="" className='lg:h-[800px] sm:h-[700px] sx:h-[450px] h-[300px] w-full object-cover'/>
+                         <div className="lg:w-1/2 w-full mt-8 lg:px-7 px-5" data-aos="fade-left" >
+                           <img  src={acc} alt=""  className="lg:h-[800px] sm:h-[700px] sx:h-[450px] h-[300px] w-full object-cover cursor-pointer transition-all duration-500 ease-in-out grayscale-0 hover:grayscale "/>
                          </div>
                        </div>
                      </div>
@@ -193,14 +228,14 @@ const About = () => {
                       <div className='2xl:w-4/5 w-full'>
                          <div className="flex lg:flex-nowrap lg:flex-row flex-col-reverse flex-wrap items-center">
                              <div className="lg:w-1/2 w-full px-5 lg:mt-0 mt-8">
-                                 <div>
-                                    <img src={hello} alt="" className='sm:h-[500px] sx:h-[400px] h-[300px] w-full object-cover' />
+                                 <div data-aos="fade-right" >
+                                    <img src={hello}  alt="" className='sm:h-[500px] sx:h-[400px] h-[300px] w-full object-cover cursor-pointer transition-all duration-500 ease-in-out grayscale-0 hover:grayscale' />
                                  </div>
                              </div>
                              <div className="lg:w-1/2 w-full lg:px-[50px] px-5">
                                 <div className='text-white'>
-                                    <h3 className='text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] mt-4'>Sharing our progress at industry events</h3>
-                                    <p className='mt-5'>Throughout the year, we connect with the AI community through a variety of virtual, in-person and hybrid industry and academic events — as a participating sponsor or as host. At these events, our engineers and researchers share our latest product developments, research breakthroughs and publications.</p>
+                                    <h3 className='text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] mt-4' data-aos="fade-left">Sharing our progress at industry events</h3>
+                                    <p className='mt-5' data-aos="fade-left">Throughout the year, we connect with the AI community through a variety of virtual, in-person and hybrid industry and academic events — as a participating sponsor or as host. At these events, our engineers and researchers share our latest product developments, research breakthroughs and publications.</p>
                                 </div>
                              </div>
                          </div>
@@ -210,7 +245,7 @@ const About = () => {
           </div>
       </section>
 
-      <section className='bg-[#121212] pt-[90px]' >
+      <section className='bg-black pt-[90px] overflow-hidden' >
          <div className="relative  overflow-hidden py-[100px] ">
            <div className="absolute inset-0 z-0">
              <AboutSqure
@@ -228,10 +263,10 @@ const About = () => {
    
           <div className="relative z-10  px-5">
             <div className="text-center text-white">
-              <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sx:leading-[48px] leading-[28px] ">
+              <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sx:leading-[48px] leading-[28px] " data-aos="zoom-in">
                 Want to stay updated on all <br /> things AI at Meta?
               </h3>
-              <p className="mt-6 sm:text-[16px] text-[14px]">
+              <p className="mt-6 sm:text-[16px] text-[14px]" data-aos="zoom-in">
                 Sign up to receive our newsletter and be the first to know about AI at Meta news, events, research breakthroughs, and more.
               </p>
             </div>

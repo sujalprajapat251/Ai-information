@@ -1,5 +1,7 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import img1 from "../Asset/About/about_bg.webp";
 import img2 from "../Asset/About/about-bg2.webp";
 import img3 from "../Asset/About/about_bg3.webp";
@@ -89,10 +91,27 @@ const AboutCard = () => {
     });
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,  // animation duration
+      once: false,     // animate every time you scroll into view
+      mirror: true,    // animate again when scrolling back up
+    });
+
+    const handleScroll = () => {
+      AOS.refresh();
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="flex lg:flex-nowrap flex-wrap justify-center items-stretch lg:mt-11 sm:mt-0 mt-3">
       {cardData.map((card, i) => (
-        <div key={i} className="3xl:w-1/4 lg:w-1/3 md:w-1/2 w-full px-5 cursor-pointer lg:mt-4 sm:mt-10 mt-5">
+        <div key={i} className="3xl:w-1/4 lg:w-1/3 md:w-1/2 w-full px-5 cursor-pointer lg:mt-4 sm:mt-10 mt-5" data-aos="fade-up">
           <div
             ref={(el) => (cardRefs.current[i] = el)}
             className="bg-themeblack border border-gray-500 rounded-[5px] overflow-hidden transform-gpu transition-colors duration-300 h-full"
