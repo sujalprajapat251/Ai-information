@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Layout from "./Component/Layout";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import Career from "./Pages/Career";
 
 function App() {
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -196,6 +197,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/career" element={<Career />}></Route>
         </Route>
       </Routes>
     </>
