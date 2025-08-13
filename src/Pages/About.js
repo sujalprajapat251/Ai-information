@@ -8,6 +8,9 @@ import AboutCard from '../Animation/AboutCard'
 import team from '../Asset/About/about_group.jpg'
 import { BiMinus, BiPlus } from 'react-icons/bi'
 import acc from '../Asset/About/about_acc.webp'
+import hello from '../Asset/About/about_industri.jpg'
+import AboutSqure from '../Animation/AboutSqure'
+import Threads from '../Animation/AboutSqure'
 
 
 const About = () => {
@@ -185,9 +188,58 @@ const About = () => {
                        </div>
                      </div>
                    </div>
+
+                   <div className='flex justify-center mt-11 sm:pt-11'>
+                      <div className='2xl:w-4/5 w-full'>
+                         <div className="flex lg:flex-nowrap lg:flex-row flex-col-reverse flex-wrap items-center">
+                             <div className="lg:w-1/2 w-full px-5 lg:mt-0 mt-8">
+                                 <div>
+                                    <img src={hello} alt="" className='sm:h-[500px] sx:h-[400px] h-[300px] w-full object-cover' />
+                                 </div>
+                             </div>
+                             <div className="lg:w-1/2 w-full lg:px-[50px] px-5">
+                                <div className='text-white'>
+                                    <h3 className='text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] mt-4'>Sharing our progress at industry events</h3>
+                                    <p className='mt-5'>Throughout the year, we connect with the AI community through a variety of virtual, in-person and hybrid industry and academic events — as a participating sponsor or as host. At these events, our engineers and researchers share our latest product developments, research breakthroughs and publications.</p>
+                                </div>
+                             </div>
+                         </div>
+                      </div>
+                  </div>
                </div>
           </div>
       </section>
+
+      <section className='bg-[#121212] pt-[90px]' >
+         <div className="relative  overflow-hidden py-[100px] ">
+           <div className="absolute inset-0 z-0">
+             <AboutSqure
+               dotSize={10}
+               gap={15}
+               baseColor="#2e2e2e"
+               activeColor="#a2d2ff"
+               proximity={120}
+               shockRadius={250}
+               shockStrength={5}
+               resistance={750}
+               returnDuration={1.5}
+             />
+           </div>
+   
+          <div className="relative z-10  px-5">
+            <div className="text-center text-white">
+              <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sx:leading-[48px] leading-[28px] ">
+                Want to stay updated on all <br /> things AI at Meta?
+              </h3>
+              <p className="mt-6 sm:text-[16px] text-[14px]">
+                Sign up to receive our newsletter and be the first to know about AI at Meta news, events, research breakthroughs, and more.
+              </p>
+            </div>
+          </div>
+   
+         </div>
+      </section>
+
     </div>
   )
 }
