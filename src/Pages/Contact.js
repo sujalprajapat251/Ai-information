@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaRegComment } from "react-icons/fa6";
 import { GiSelfLove } from "react-icons/gi";
 import { BsTwitterX } from "react-icons/bs";
@@ -6,6 +6,7 @@ import xAi from '../Asset/Contact/XAi.svg'
 import grok from '../Asset/Contact/Grok.svg'
 import joinGrok from '../Asset/Contact/JoinGrok.svg'
 import contact from "../Asset/Contact/contact.jpg";
+import AOS from "aos";
 
 const Contact = () => {
   function generateStars(count, size, duration) {
@@ -37,6 +38,28 @@ const Contact = () => {
   generateStars(40, 1, 50);
   generateStars(20, 2, 100);
   generateStars(10, 3, 150);
+
+  useEffect(() => {
+    AOS.init({ duration: 2000, once: true });
+}, [])
+
+useEffect(() => {
+  AOS.init({
+    duration: 1000,
+    once: false,
+    mirror: true,
+  });
+
+  const handleScroll = () => {
+    AOS.refresh();
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
   return (
     <>
       <div id="stars"></div>
@@ -47,7 +70,7 @@ const Contact = () => {
           <h1 className="text-5xl font-normal pb-20">Contact</h1>
 
           <div className="flex flex-col md:flex-row gap-8 border-gray-800 pb-12">
-            <div className="flex flex-col gap-20 md:border-r border-gray-800 pr-8 flex-1">
+            <div className="flex flex-col gap-20 md:border-r border-gray-800 pr-8 flex-1" data-aos="fade-up"  data-aos-duration="3000">
               <div className="text-2xl"><FaRegComment className="text-4xl" /></div>
               <div>
                 <h2 className="text-xl font-normal mb-4">Contact Product Support</h2>
@@ -59,7 +82,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-20 md:pl-8 flex-1">
+            <div className="flex flex-col gap-20 md:pl-8 flex-1" data-aos="fade-up"  data-aos-duration="3000">
               <div className="text-2xl"><GiSelfLove className="text-4xl" /></div>
               <div>
                 <h2 className="text-xl font-normal mb-4">Contact Sales</h2>
@@ -69,19 +92,19 @@ const Contact = () => {
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-8 py-12 border-gray-800">
-            <div className="border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1">
+            <div className="border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
               <div><img src={xAi} alt="" className="w-10 mb-4" /></div>
               <h3 className="text-xl mt-2">Visit xAI on <BsTwitterX className="text-sm inline-block" /></h3>
               <p className="text-[#7D8187] text-md pt-4">Visit our official xAI{" "}<BsTwitterX className="text-sm inline-block" /> account.</p>
             </div>
 
-            <div className="border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1">
+            <div className="border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
               <div><img src={grok} alt="" className="w-10 mb-4" /></div>
               <h3 className="text-xl mt-2">Visit Grok on <BsTwitterX className="text-sm inline-block" /></h3>
               <p className="text-[#7D8187] text-md pt-4">Visit our official Grok{" "}<BsTwitterX className="text-sm inline-block" /> account.</p>
             </div>
 
-            <div className="border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1">
+            <div className="border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
               <div><img src={joinGrok} alt="" className="w-10 h-10 mb-4" /></div>
               <h3 className="text-xl mt-2">Join Grok on Discord</h3>
               <p className="text-[#7D8187] text-md pt-4">Visit our official Grok Discord community.</p>
@@ -89,11 +112,11 @@ const Contact = () => {
           </div>
 
           <div className="flex flex-col md:flex-row gap-8 pt-8 text-sm">
-            <div>
+            <div data-aos="fade-up"  data-aos-duration="3000">
               <p className="uppercase font-medium text-[#7D8187]">Media</p>
               <p className="mt-1">media@x.ai</p>
             </div>
-            <div>
+            <div data-aos="fade-up"  data-aos-duration="3000">
               <p className="uppercase font-medium text-[#7D8187]">Safety</p>
               <p className="mt-1">safety@x.ai</p>
             </div>
@@ -102,12 +125,12 @@ const Contact = () => {
 
         <div className="container mx-auto px-4 pb-16">
           <div className="flex flex-col md:flex-row gap-8 items-stretch">
-            <div className="md:w-1/2 w-full">
+            <div className="md:w-1/2 w-full" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
               <div className="h-full">
                 <img src={contact} alt="Contact" className="w-full h-full object-cover rounded-lg"/>
               </div>
             </div>
-            <form className="w-full md:w-1/2 space-y-6 h-full">
+            <form className="w-full md:w-1/2 space-y-6 h-full" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
               <div>
                 <label className="block mb-2 text-sm font-medium">Company size</label>
                 <select className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500">
