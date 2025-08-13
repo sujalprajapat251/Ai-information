@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import Layout from "./Component/Layout";
 import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 
 function App() {
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -194,6 +195,7 @@ function App() {
         <Route path="" element={<Layout />}>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
         </Route>
       </Routes>
     </>
