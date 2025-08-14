@@ -215,9 +215,10 @@ const Stories = () => {
                             className={item.className}
                             onClick={() => setSelectedItem({ ...item, index })}
                             style={{ cursor: "pointer" }}
+
                         >
-                            <DraggableCardBody className={`${item.className} flex flex-col`}>
-                                <article>
+                            <DraggableCardBody className={`${item.className} flex flex-col`} >
+                                <article >
                                     {item.img && (
                                         <img
                                             src={item.img}
@@ -244,7 +245,7 @@ const Stories = () => {
                         </motion.div>
                     ))}
                 </DraggableCardContainer>
-                <div className='md:hidden flex flex-col w-full overflow-hidden'> 
+                <div className='md:hidden flex flex-col w-full overflow-hidden'>
                     {filterData.map((item, index) => (
                         <motion.div
                             key={index}
@@ -252,6 +253,10 @@ const Stories = () => {
                             className={` bg-themeblack p-6 g-4 w-[100%] rotate-0 mt-4`}
                             onClick={() => setSelectedItem({ ...item, index })}
                             style={{ cursor: "pointer" }}
+                            data-aos="fade-left"
+                            data-aos-anchor="#example-anchor"
+                            data-aos-offset="500"
+                            data-aos-duration="500"
                         >
                             <article>
                                 {item.img && (
@@ -279,7 +284,7 @@ const Stories = () => {
                         </motion.div>
                     ))}
                 </div>
-            </div>        
+            </div>
 
             <AnimatePresence>
                 {selectedItem && (

@@ -9,7 +9,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import "../../style/Sujal.css"
 import { CanvasConfettiCursor } from "../../reactBeats/CanvasConfettiCursor";
-
+import video from '../../Asset/Home/team.mp4'
 
 
 
@@ -20,7 +20,7 @@ const Introduction = () => {
         Aos.init({ duration: 2000, once: true }); // 1s animation, triggers once
     }, [])
     const containerRef = useRef(null);
-    
+
 
 
 
@@ -55,6 +55,67 @@ const Introduction = () => {
                     </div>
                 </div>
             </div>
+            (
+            <section className="bg-black text-white px-8 py-16">
+                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+
+                    {/* Left Text Content */}
+                    <div>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                            Powering Business Success with AI <br /> & Data Analytics Services
+                        </h1>
+
+                        <p className="text-gray-300 mb-4">
+                            Infosys <span className="font-bold">Data analytics</span> and AI, part of{" "}
+                            <a href="#" className="text-blue-400 underline">
+                                Infosys Topaz
+                            </a>{" "}
+                            enables enterprises to{" "}
+                            <span className="font-bold">
+                                unlock new business possibilities with Data analytics and AI.
+                            </span>
+                        </p>
+
+                        <p className="text-gray-400 mb-4">
+                            The transformation unleashed by generative AI and advanced data
+                            analytics, with a cloud foundation, is changing business in profound,
+                            unalterable ways. Opportunities of the future will lead businesses to
+                            become more connected, more intelligent, and more autonomous creating a
+                            digital mesh of enterprises working together to deliver value to end
+                            consumers, citizens, and customers through a strategically crafted
+                            symbiotic and collaborative ecosystem.
+                        </p>
+
+                        <p className="text-gray-400 mb-6">
+                            Data & AI will help enterprises unlock these next generation opportunities
+                            to:
+                        </p>
+
+                       
+                    </div>
+
+                    {/* Right Video/Image */}
+                    <div className="relative">
+                        <video
+                            src={video}
+                            alt="Data Analytics"
+                            className="rounded-lg shadow-lg"
+                        />
+                        <button className="absolute inset-0 flex items-center justify-center">
+                            <div className="bg-blue-500 rounded-full p-4 hover:bg-blue-600 transition">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="white"
+                                    viewBox="0 0 24 24"
+                                    className="w-8 h-8"
+                                >
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
         </>
 
     );

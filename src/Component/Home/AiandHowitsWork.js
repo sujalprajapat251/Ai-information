@@ -165,7 +165,7 @@ const AiandHowitsWork = () => {
                     </p> */}
                 </div>
                 <div className="2xl:flex container  ">
-                    <div className="2xl:w-[40%] lg:w-[50%] w-full m-auto " data-aos="fade-up" data-aos-duration="3000">
+                    <div className="2xl:w-[40%] lg:w-[50%] w-full m-auto " data-aos="fade-right"data-aos-duration="3000">
                         <DotLottieReact
                             src="https://lottie.host/73cf04a2-d521-4e7f-b490-6dfc5172e1cb/pokuuNkZid.json"
                             loop
