@@ -205,7 +205,11 @@
     background-position-y: var(--bg-pos-y--end);
   }
 }
-
+@media (max-width:424px){
+	.card{
+		min-width: 280px;
+	}
+}
 /* umang css */
 html {
   height: 100%;
