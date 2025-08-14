@@ -1,22 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Hyperspeed from '../Animation/HyperSpeed'
-import img1 from '../Asset/About/about_bg.webp'
-import img2 from '../Asset/About/about-bg2.webp'
-import img3 from '../Asset/About/about_bg3.webp'
-import { FaArrowRight } from 'react-icons/fa'
 import AboutCard from '../Animation/AboutCard'
-import team from '../Asset/About/about_group.jpg'
 import { BiMinus, BiPlus } from 'react-icons/bi'
 import acc from '../Asset/About/about_acc.webp'
 import hello from '../Asset/About/about_industri.jpg'
 import AboutSqure from '../Animation/AboutSqure'
-import Threads from '../Animation/AboutSqure'
 import TextType from '../Animation/TextType'
-import { JigsawPuzzle } from 'react-jigsaw-puzzle'
 import 'react-jigsaw-puzzle/lib/jigsaw-puzzle.css';
-import Demo from '../Animation/Demo'
-import * as THREE from "three";
-import BIRDS from "vanta/dist/vanta.birds.min";
 import Member from '../Component/About/Member'
 
 
