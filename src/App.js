@@ -6,6 +6,7 @@ import Layout from "./Component/Layout";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Career from "./Pages/Career";
+import CareerAcc from "./Component/Career/CareerAcc";
 
 function App() {
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -198,6 +199,7 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/career" element={<Career />}></Route>
+          <Route path="/was" element={<CareerAcc/>}></Route>
         </Route>
       </Routes>
     </>
