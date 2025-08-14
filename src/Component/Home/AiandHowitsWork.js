@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { Transition } from "motion/react"
 import * as motion from "motion/react-client"
 import robot from '../../Asset/Home/robot1.png'
 import ai1 from '../../Asset/Home/ai1.png'
@@ -130,9 +129,10 @@ const AiandHowitsWork = () => {
     const [selectStep, setSelectStep] = useState(0);
 
     return (
-        <div className="relative">
+        <div className="relative overflow-hidden">
             <div className="bg-black xl:py-10 py-6">
                 <h2 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white text-center md:mb-5 mb-3 2xl:leading-[60px] py-5" data-aos="fade-up"><span className="text-themedark fond-extrabold">Artificial </span> Intelligence</h2>
+                
                 <article class="card__container container p-[30px] ">
                     {aiDetails.map((item) => {
                         return (
@@ -205,7 +205,7 @@ const AiandHowitsWork = () => {
                 </div>
             </div>
             <div className="hidden lg:block">
-                <motion.div
+                {/* <motion.div
                     // initial={{ opacity: 1, scale: 1 , height:0}}
                     // animate={{ opacity: 1, scale: 1, height:800 }}
                     transition={transition}
@@ -218,7 +218,7 @@ const AiandHowitsWork = () => {
                         top: "30%",
                         left: '100px'
                     }}
-                />
+                /> */}
                 <motion.img
                     src={robot}
                     alt="Flying Robot"
