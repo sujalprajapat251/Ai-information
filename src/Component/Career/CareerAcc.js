@@ -72,24 +72,24 @@ useEffect(() => {
   return (
     <>
     <section className='bg-black'>
-        <div className='pt-11'>
-            <div className='container'>
-               <div className="flex justify-center">
+        <div className=''>
+            <div className='container mx-auto py-12 sm:!px-6 !px-4'>
+               <div className="flex justify-center" data-aos="zoom-in" data-aos-duration="3000">
                    <div className="3xl:w-1/3 lg:w-1/2  text-white">
                       <h3 className="text-center text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] leading-[28px] mt-4">We build awesome things</h3> 
                       <p className='text-center mt-4 sm:text-[16px] text-[14px]'>We do more than make great technologies — we create awe and inspiration. AI is influencing the metaverse in mind-blowing ways and we’re staying a step ahead. From our Llama collection of open-source large language models to immersive virtual reality headsets and Ray-Ban Meta glasses, we’re making our vast world feel smaller and more connected.</p>
                    </div>
                </div>
-              <div className="flex justify-center mt-5">
+              <div className="flex justify-center pt-12">
                      <div className="2xl:w-4/5 w-full">
-                       <div className="flex lg:flex-nowrap flex-wrap">
-                         <div className="lg:w-1/2 w-full mt-8 lg:px-5 px-5">
+                       <div className="flex lg:flex-nowrap gap-8 flex-wrap">
+                         <div className="lg:w-1/2 w-full">
                            <div>
                              <div className="border-t border-[#7e7d7d]"></div>
                              {accordionData.map((item, index) => {
                                const isOpen = openIndexes.includes(index);
                                return (
-                                 <div key={index} data-aos="fade-right">
+                                 <div key={index} data-aos="fade-right" data-aos-duration="3000">
                                    {/* Header */}
                                    <button onClick={() => toggle(index)} className="flex w-full my-8 justify-between text-white sm:text-[20px] text-[18px] items-center text-left font-semibold text-lg focus:outline-none">
                                      {item.title}
@@ -110,7 +110,7 @@ useEffect(() => {
                              })}
                            </div>
                          </div>
-                         <div className="relative lg:w-1/2 w-full mt-8 lg:px-7 px-5" data-aos="fade-left">
+                         <div className="relative lg:w-1/2 w-full" data-aos="fade-left" data-aos-duration="3000">
                            {[lama, quest, glass, ar, ai].map((src, index) => (
                              <img
                                key={index}
@@ -129,11 +129,11 @@ useEffect(() => {
         </div>
     </section>
 
-    <section className='bg-black'>
+    {/* <section className='bg-black'>
        <div>
           
        </div>
-    </section>
+    </section> */}
     </>
   )
 }
