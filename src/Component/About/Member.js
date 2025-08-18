@@ -35,14 +35,15 @@ useEffect(() => {
                       <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${   hovered ? "opacity-100" : "opacity-0" }`}>
                          <img src={team} alt="Team Merged" className="w-full h-full object-cover"/>
                       </div>
-                      <div className={`transition-opacity duration-700 ease-in-out ${ hovered ? "opacity-0" : "opacity-100" }`}>
+                      <div className={`transition-opacity duration-700 ease-in-out ${ hovered ? "opacity-0 cursor-pointer" : "opacity-100" }`}>
                          <JigsawPuzzle imageSrc={team} rows={3} columns={3} onSolved={() => alert("Puzzle solved!")} className="h-full object-cover"/>
                       </div>
                    </div>
-                     <div className='lg:w-1/2 w-full bg-[#222222]'>
-                         <div className='sm:p-[65px] sx:p-[40px] p-[20px] text-white'>
+                     <div className='lg:w-1/2 w-full bg-[#222222] lg:mt-0  mt-5'>
+                         <div className='sm:p-[65px] sx:p-[35px] p-[20px] text-white'>
                             <p data-aos="fade-left">Mentorship programs</p>
-                            <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sx:leading-[46px] leading-[28px] mt-4" data-aos="fade-left" >Get hands-on experience in AI <br /> research</h3>
+                            <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[46px] leading-[28px] mt-4 md:block hidden" data-aos="fade-left" >Get hands-on experience in AI <br /> research</h3>
+                            <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[46px] leading-[28px] mt-4 md:hidden block" data-aos="fade-left" >Get hands-on experience in AI research</h3>
                             <p className='sm:text-[16px] text-[14px] mt-10 sm:pt-4' data-aos="fade-left" >We’re passionate about introducing people to the extraordinary world of AI. Our AI Mentorship (AIM) and EMEA programs let PhD candidates conduct open science research in collaboration with their university, academic advisor, and AI at Meta mentor participants as full-time AI at Meta employees.</p>
                             <p className='sm:text-[16px] text-[14px] mt-5' data-aos="fade-left" >We currently have agreements in place with prestigious universities in the United States, France, Israel and the United Kingdom.</p>
                             <p className='mt-10 sm:pt-4 sm:text-[18px] text-[16px] font-[600]' data-aos="fade-left" >For more about these programs, reach out to us at MetaAIM@meta.com</p>

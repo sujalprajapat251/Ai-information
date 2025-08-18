@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Hyperspeed from '../Animation/HyperSpeed'
 import AboutCard from '../Animation/AboutCard'
 import { BiMinus, BiPlus } from 'react-icons/bi'
@@ -13,7 +13,6 @@ import Member from '../Component/About/Member'
 const About = () => {
 
   const [key, setKey] = useState(0);
-  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -230,7 +229,7 @@ const About = () => {
    
           <div className="relative z-10  px-5">
             <div className="text-center text-white">
-              <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sx:leading-[48px] leading-[28px] " data-aos="zoom-in">
+              <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] leading-[28px] " data-aos="zoom-in">
                 Want to stay updated on all <br /> things AI at Meta?
               </h3>
               <p className="mt-6 sm:text-[16px] text-[14px]" data-aos="zoom-in">
