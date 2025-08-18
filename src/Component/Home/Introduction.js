@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import "../../style/Sujal.css"
 import { CanvasConfettiCursor } from "../../reactBeats/CanvasConfettiCursor";
 import video from '../../Asset/Home/team.mp4'
+import { Link } from "react-router-dom";
 
 
 
@@ -21,7 +22,19 @@ const Introduction = () => {
     }, [])
     const containerRef = useRef(null);
 
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
 
+    const handleTogglePlay = () => {
+        if (!videoRef.current) return;
+
+        if (isPlaying) {
+            videoRef.current.pause();
+        } else {
+            videoRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+    };
 
 
     return (
@@ -50,17 +63,17 @@ const Introduction = () => {
                     <h2 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white text-center md:mb-5 mb-3 2xl:leading-[60px]" data-aos="fade-up">OpenAI, <span className="text-themedark fond-extrabold">NVIDIA</span> Propel AI Innovation With New Optimized Open Models</h2>
                     <p className="text-[#f0f0f0] text-center sm:text-base text-xs  md:mb-5 mb-3  px-5" data-aos="fade-up" >New <span className="text-themedark">NVIDIA</span> technologies are enabling instant world reconstruction, spatial reasoning, and large-scale simulation on NVIDIA DGX Cloud and NVIDIA RTX PRO Blackwell servers.</p>
                     <p className="text-[#f0f0f0] text-center sm:text-base text-xs md:mb-5 mb-3  px-5" data-aos="fade-up">Advanced blueprints, vision language models and synthetic data generation extensions from <span className="text-themedark">NVIDIA</span> Metropolis enhance productivity and improve safety across environments..</p>
-                    <div className="md:w-[200px] w-[100px] bg-themedark rounded-full text-white hover:bg-white hover:text-themedark hover:font-extrabold mt-[20px]  cursor-pointer" data-aos="fade-up">
+                    <Link to="/contact" className="md:w-[200px] w-[100px] bg-themedark rounded-full text-white hover:bg-white hover:text-themedark hover:font-extrabold mt-[20px]  cursor-pointer" data-aos="fade-up">
                         <p className="p-3 md:text-lg text-sm text-center">Contact Us</p>
-                    </div>
+                    </Link>
                 </div>
             </div>
             (
             <section className="bg-black text-white px-8 py-16">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center" > 
 
                     {/* Left Text Content */}
-                    <div>
+                    <div data-aos="fade-up">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                             Powering Business Success with AI <br /> & Data Analytics Services
                         </h1>
@@ -91,26 +104,42 @@ const Introduction = () => {
                             to:
                         </p>
 
-                       
+
                     </div>
 
                     {/* Right Video/Image */}
-                    <div className="relative">
+                    <div className="relative" data-aos="fade-up">
                         <video
+                            ref={videoRef}
                             src={video}
-                            alt="Data Analytics"
                             className="rounded-lg shadow-lg"
                         />
-                        <button className="absolute inset-0 flex items-center justify-center">
-                            <div className="bg-blue-500 rounded-full p-4 hover:bg-blue-600 transition">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="white"
-                                    viewBox="0 0 24 24"
-                                    className="w-8 h-8"
-                                >
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
+                        <button
+                            onClick={handleTogglePlay}
+                            className="absolute inset-0 flex items-center justify-center"
+                        >
+                            <div className={`bg-themedark rounded-full p-4 hover:bg-themedark transition ${isPlaying ? 'hidden' : null}`}>
+                                {isPlaying ? (
+                                    // Pause Icon
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="white"
+                                        viewBox="0 0 24 24"
+                                        className="w-8 h-8"
+                                    >
+                                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                                    </svg>
+                                ) : (
+                                    // Play Icon
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="white"
+                                        viewBox="0 0 24 24"
+                                        className="w-8 h-8"
+                                    >
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                )}
                             </div>
                         </button>
                     </div>
