@@ -14,6 +14,7 @@
     "aos": "^2.3.4",
     "axios": "^1.11.0",
     "clsx": "^2.1.1",
+    "formik": "^2.4.6",
     "framer-motion": "^12.23.12",
     "gsap": "^3.13.0",
     "lightswind": "^3.1.15",
@@ -33,7 +34,8 @@
     "react-virtuoso": "^4.14.0",
     "swiper": "^11.2.10",
     "tailwind-merge": "^3.3.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
