@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown, IoIosSearch, IoIosMenu, IoIosClose } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const location = useLocation()
+  const [path, setPath] = useState(location.pathname)
+  
   return (
     <>
     <header className="border-gray-800 bg-[#060606] text-[#9aa0a6] relative">
@@ -18,10 +22,10 @@ const Header = () => {
             <button className="text-xs sm:text-sm"><IoIosArrowDown /></button>
           </div>
           <nav className="hidden lg:flex space-x-4 text-sm">
-            <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] hover:rounded-full py-2 px-4 font-medium transition">Models</a>
-            <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] hover:rounded-full py-2 px-4 font-medium transition">Research</a>
-            <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] hover:rounded-full py-2 px-4 font-medium transition">Science</a>
-            <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] hover:rounded-full py-2 px-4 font-medium transition">About</a>
+            <Link to="/" className={`${path === '/' ? "text-white" : ""} hover:bg-[rgba(241,243,244,0.08)] hover:rounded-full py-2 px-4 font-medium transition`} onClick={()=> setPath("/")}>Home</Link>
+            <Link to="/about" className={`${path === '/about' ? "text-white" : ""} hover:bg-[rgba(241,243,244,0.08)] hover:rounded-full py-2 px-4 font-medium transition`} onClick={()=> setPath("/about")}>About Us</Link>
+            <Link to="/career" className={`${path === '/career' ? "text-white" : ""} hover:bg-[rgba(241,243,244,0.08)] hover:rounded-full py-2 px-4 font-medium transition`} onClick={()=> setPath("/career")}>Career</Link>
+            <Link to="/contact" className={`${path === '/contact' ? "text-white" : ""} hover:bg-[rgba(241,243,244,0.08)] hover:rounded-full py-2 px-4 font-medium transition`} onClick={()=> setPath("/contact")}>Contact Us</Link>
           </nav>
         </div>
         <div className="hidden md:flex items-center space-x-3">
@@ -37,10 +41,10 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-[#060606] border-t border-gray-800 z-50">
           <nav className="flex flex-col p-4 space-y-2">
-            <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm">Models</a>
-            <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm">Research</a>
-            <a href="#" className="hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm">Science</a>
-            <Link to="/about" className="hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm">About</Link>
+            <Link to="/" className={`${path === '/' ? "text-white" : ""} hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm`} onClick={()=> setPath("/")}>Home</Link>
+            <Link to="/about" className={`${path === '/about' ? "text-white" : ""} hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm`} onClick={()=> setPath("/about")}>About Us</Link>
+            <Link to="/career" className={`${path === '/career' ? "text-white" : ""} hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm`} onClick={()=> setPath("/career")}>Career</Link>
+            <Link to="/contact" className={`${path === '/contact' ? "text-white" : ""} hover:bg-[rgba(241,243,244,0.08)] rounded-lg py-3 px-4 font-medium transition text-sm`} onClick={()=> setPath("/contact")}>Contact Us</Link>
             <div className="border-t border-gray-800 mt-4 pt-4 space-y-2">
               <button className="w-full bg-[rgba(241,243,244,0.08)] font-medium py-3 px-4 rounded-lg text-sm hover:bg-[rgba(241,243,244,0.12)] transition">Build with Gemini</button>
               <button className="w-full bg-[rgba(241,243,244,0.08)] font-medium py-3 px-4 rounded-lg text-sm hover:bg-[rgba(241,243,244,0.12)] transition">★ Try Gemini</button>

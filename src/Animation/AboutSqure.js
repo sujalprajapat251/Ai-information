@@ -191,9 +191,9 @@ const AboutSqure = ({
       pr.vy = vy;
       pr.speed = speed;
 
-      const rect = canvasRef.current.getBoundingClientRect();
-      pr.x = e.clientX - rect.left;
-      pr.y = e.clientY - rect.top;
+      const rect = canvasRef?.current?.getBoundingClientRect();
+      pr.x = e.clientX - rect?.left;
+      pr.y = e.clientY - rect?.top;
 
       for (const dot of dotsRef.current) {
         const dist = Math.hypot(dot.cx - pr.x, dot.cy - pr.y);
