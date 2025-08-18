@@ -7,6 +7,8 @@ import grok from '../Asset/Contact/Grok.svg'
 import joinGrok from '../Asset/Contact/JoinGrok.svg'
 import contact from "../Asset/Contact/contact.jpg";
 import AOS from "aos";
+import * as Yup from "yup";
+import { useFormik } from 'formik';
 
 const Contact = () => {
   function generateStars(count, size, duration) {
@@ -59,6 +61,44 @@ useEffect(() => {
     window.removeEventListener("scroll", handleScroll);
   };
 }, []);
+
+const contVal = {
+  comsize:"",
+  comname:"",
+  firstname:"",
+  lastname:"",
+  email:"",
+  num:"",
+  message:""
+}
+
+const ContactFormik = useFormik({
+    initialValues:contVal,
+    validationSchema: Yup.object({
+      comsize: Yup.string().required("Company size is required"),
+      comname: Yup.string()
+        .min(2, "Company name must be at least 2 characters")
+        .required("Company name is required"),
+      firstname: Yup.string()
+        .min(2, "First name must be at least 2 characters")
+        .required("First name is required"),
+      lastname: Yup.string()
+        .min(2, "Last name must be at least 2 characters")
+        .required("Last name is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
+      num: Yup.string()
+        .matches(/^[0-9]{10,15}$/, "Phone number must be 10–15 digits")
+        .required("Phone number is required"),
+      message: Yup.string()
+        .min(10, "Message must be at least 10 characters")
+        .required("Message is required"),
+    }),
+    onSubmit:()=>{
+       
+    }
+})
 
   return (
     <>
@@ -130,41 +170,52 @@ useEffect(() => {
                 <img src={contact} alt="Contact" className="w-full h-full object-cover rounded-lg"/>
               </div>
             </div>
-            <form className="w-full md:w-1/2 space-y-6 h-full" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <form onSubmit={ContactFormik.handleSubmit} className="w-full md:w-1/2 space-y-6 h-full" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
               <div>
                 <label className="block mb-2 text-sm font-medium">Company size</label>
-                <select className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500">
-                  <option>Please Select</option>
+                <select name='comsize' value={ContactFormik.values.comsize} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500">
+                    <option value="">Please Select</option>
+                    <option value="1-10">1-10</option>
+                    <option value="11-50">11-50</option>
+                    <option value="51-200">51-200</option>
+                    <option value="200+">200+</option>
                 </select>
+                {ContactFormik.touched.comsize && ContactFormik.errors.comsize && (<p className="text-red-500 text-xs">{ContactFormik.errors.comsize}</p>)}
               </div>
               <div>
                 <label className="block mb-2 text-sm font-medium">Company name</label>
-                <input type="text" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                <input type="text" name='comname' value={ContactFormik.values.comname} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                {ContactFormik.touched.comname && ContactFormik.errors.comname && (<p className="text-red-500 text-xs">{ContactFormik.errors.comname}</p>)}
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block mb-2 text-sm font-medium">First name</label>
-                  <input type="text" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="text" name='firstname' value={ContactFormik.values.firstname} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  {ContactFormik.touched.firstname && ContactFormik.errors.firstname && (<p className="text-red-500 text-xs">{ContactFormik.errors.firstname}</p>)}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium">Last name</label>
-                  <input type="text" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="text" name='lastname' value={ContactFormik.values.lastname} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  {ContactFormik.touched.lastname && ContactFormik.errors.lastname && (<p className="text-red-500 text-xs">{ContactFormik.errors.lastname}</p>)}
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block mb-2 text-sm font-medium">Work email</label>
-                  <input type="email" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="email" name='email' value={ContactFormik.values.email} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  {ContactFormik.touched.email && ContactFormik.errors.email && (<p className="text-red-500 text-xs">{ContactFormik.errors.email}</p>)}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium">Phone number</label>
-                  <input type="tel" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="tel" name='num' value={ContactFormik.values.num} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  {ContactFormik.touched.num && ContactFormik.errors.num && (<p className="text-red-500 text-xs">{ContactFormik.errors.num}</p>)}
                 </div>
               </div>
               <div>
                 <label className="block mb-2 text-sm font-medium">Can you share more about your business needs and challenges?
                 </label>
-                <textarea rows="5" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"></textarea>
+                <textarea rows="5" name="message" value={ContactFormik.values.message} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"></textarea>
+                {ContactFormik.touched.message && ContactFormik.errors.message && (<p className="text-red-500 text-xs">{ContactFormik.errors.message}</p>)}
               </div>
               <button type="submit" className="bg-gray-800 hover:bg-gray-700 px-6 py-2 rounded-full text-sm">Submit</button>
             </form>
