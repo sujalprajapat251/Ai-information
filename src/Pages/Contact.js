@@ -92,19 +92,19 @@ useEffect(() => {
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-8 py-12 border-gray-800">
-            <div className="border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            <div className="md:border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
               <div><img src={xAi} alt="" className="w-10 mb-4" /></div>
               <h3 className="text-xl mt-2">Visit xAI on <BsTwitterX className="text-sm inline-block" /></h3>
               <p className="text-[#7D8187] text-md pt-4">Visit our official xAI{" "}<BsTwitterX className="text-sm inline-block" /> account.</p>
             </div>
 
-            <div className="border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            <div className="md:border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
               <div><img src={grok} alt="" className="w-10 mb-4" /></div>
               <h3 className="text-xl mt-2">Visit Grok on <BsTwitterX className="text-sm inline-block" /></h3>
               <p className="text-[#7D8187] text-md pt-4">Visit our official Grok{" "}<BsTwitterX className="text-sm inline-block" /> account.</p>
             </div>
 
-            <div className="border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            <div className="md:border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
               <div><img src={joinGrok} alt="" className="w-10 h-10 mb-4" /></div>
               <h3 className="text-xl mt-2">Join Grok on Discord</h3>
               <p className="text-[#7D8187] text-md pt-4">Visit our official Grok Discord community.</p>
@@ -123,7 +123,7 @@ useEffect(() => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 pb-16">
+        <div className="container mx-auto sm:!px-6 !px-4 pb-16 overflow-hidden">
           <div className="flex flex-col md:flex-row gap-8 items-stretch">
             <div className="md:w-1/2 w-full" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
               <div className="h-full">

@@ -9,6 +9,15 @@ import { GiSelfLove } from "react-icons/gi";
 import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
 import { GiCheckMark } from "react-icons/gi";
 import career from '../Asset/Career/career.png'
+import AOS from "aos";
+
+import slider_1 from '../Asset/Career/slider_1.png'
+import slider_2 from '../Asset/Career/slider_2.png'
+import slider_3 from '../Asset/Career/slider_3.png'
+import slider_4 from '../Asset/Career/slider_4.png'
+import slider_5 from '../Asset/Career/slider_5.png'
+import slider_6 from '../Asset/Career/slider_6.png'
+import slider_7 from '../Asset/Career/slider_3.png'
 
 import '../style/Sujal.css'
 
@@ -27,43 +36,43 @@ const Career = () => {
   
     const slides = [
       {
-        src: "https://images.unsplash.com/photo-1518737001631-526a4fb96927?w=600&h=400&fit=crop",
+        src: slider_1,
         title: "Mountain Peak",
         subtitle: "Majestic Heights",
         color: "from-blue-600 to-purple-600"
       },
       {
-        src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop",
+        src: slider_2,
         title: "Forest Trail",
         subtitle: "Nature's Path",
         color: "from-green-600 to-teal-600"
       },
       {
-        src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+        src: slider_3,
         title: "Ocean Waves",
         subtitle: "Endless Blue",
         color: "from-cyan-600 to-blue-600"
       },
       {
-        src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop",
+        src: slider_4,
         title: "Golden Valley",
         subtitle: "Sunset Magic",
         color: "from-orange-600 to-red-600"
       },
       {
-        src: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&h=400&fit=crop",
+        src: slider_5,
         title: "Rolling Hills",
         subtitle: "Green Paradise",
         color: "from-emerald-600 to-green-600"
       },
       {
-        src: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=600&h=400&fit=crop",
+        src: slider_6,
         title: "Starry Night",
         subtitle: "Cosmic Wonder",
         color: "from-indigo-600 to-purple-600"
       },
       {
-        src: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=600&h=400&fit=crop",
+        src: slider_7,
         title: "Desert Dunes",
         subtitle: "Golden Sands",
         color: "from-yellow-600 to-orange-600"
@@ -176,21 +185,37 @@ const Career = () => {
       };
     };
   
+    useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        once: false,
+        mirror: true,
+      });
+      const handleScroll = () => {
+        AOS.refresh();
+      };
+    
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+  
   return (
-    <>
-    <section className="bg-black text-white">
-        <div className="container mx-auto px-6 py-16 text-center">
+    <div className='overflow-hidden'>
+    <section className="bg-black text-white" data-aos="zoom-in" data-aos-duration="3000">
+        <div className="container mx-auto sm:!px-6 !px-4 py-12 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Join Our Team</h1>
             <p className="text-lg max-w-2xl mx-auto">Be part of a team that’s shaping the future. We’re looking for passionate people to grow with us.</p>
         </div>
     </section>
 
-    <section className="bg-black text-white container mx-auto px-6 py-16">
+    <section className="bg-black text-white container mx-auto sm:!px-6 !px-4 py-12">
         <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="flex-1 transform hover:scale-105 transition duration-500 ease-in-out">
+            <div className="flex-1 transform hover:scale-105 transition duration-500 ease-in-out"  data-aos="zoom-in" data-aos-duration="3000">
                 <img src={career} alt="Team" className="rounded-2xl shadow-2xl w-full" style={{ boxShadow: "0 15px 35px rgba(0,0,0,0.6)" }}/>
             </div>
-            <div className="flex-1">
+            <div className="flex-1" data-aos="zoom-in" data-aos-duration="3000">
                 <h2 className="text-3xl font-semibold mb-4">Why Work With Us?</h2>
                 <p className="mb-6 text-gray-300">We foster an inclusive environment where innovation thrives. From flexible schedules to career development, we support our team every step of the way.</p>
                 <ul className="space-y-3 text-lg">
@@ -203,7 +228,7 @@ const Career = () => {
         </div>
     </section>
         
-    <div className="container overflow-hidden py-16">
+    <div className="container mx-auto overflow-hidden sm:!px-6 !px-4 py-12">
       <div className="relative z-10 flex flex-col items-center justify-center">
         <div  ref={sliderRef} className="relative w-full h-96 mb-16" style={{ perspective: '2000px', perspectiveOrigin: 'center center' }} onMouseEnter={() => setIsAutoPlaying(false)} onMouseLeave={() => setIsAutoPlaying(true)}>
           <button onClick={goToPrevious} className="absolute left-8 top-1/2 transform -translate-y-1/2 z-50 group">
@@ -223,7 +248,7 @@ const Career = () => {
               return (
                 <div
                   key={index}
-                  className={`absolute w-80 h-80 cursor-pointer transition-all duration-1000 ease-out ${
+                  className={`absolute sm:w-80 sm:h-80 w-60 h-60 cursor-pointer transition-all duration-1000 ease-out ${
                     isActive ? 'hover:scale-105' : 'hover:scale-110'
                   }`}
                   style={{
@@ -266,12 +291,12 @@ const Career = () => {
       </div>
     </div>
 
-    <section className="bg-black text-white py-16">
-        <div className="container mx-auto px-6">
+    <section className="bg-black text-white">
+        <div className="container mx-auto py-12 sm:!px-6 !px-4">
             <h2 className="text-3xl font-semibold mb-10 text-center">Open Positions</h2>
             <div className="flex flex-wrap justify-center gap-8">
                 <div className="flex flex-col border border-gray-700 rounded-2xl p-6 w-full md:w-[300px] transform transition duration-500 hover:scale-105 hover:shadow-2xl"
-                    style={{ boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}}>
+                    style={{ boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}} data-aos="flip-left" data-aos-duration="3000">
                     <h3 className="text-xl font-semibold mb-2">Frontend Developer</h3>
                     <p className="mb-4 text-gray-400">Remote • Full-time</p>
                     <p className="mb-6 text-gray-300">Work with the latest web technologies to build user-friendly interfaces.</p>
@@ -279,7 +304,7 @@ const Career = () => {
                 </div>
 
                 <div className="flex flex-col border border-gray-700 rounded-2xl p-6 w-full md:w-[300px] transform transition duration-500 hover:scale-105 hover:shadow-2xl"
-                    style={{ boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}}>
+                    style={{ boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}} data-aos="flip-left" data-aos-duration="3000">
                     <h3 className="text-xl font-semibold mb-2">UI/UX Designer</h3>
                     <p className="mb-4 text-gray-400">New York, NY • Hybrid</p>
                     <p className="mb-6 text-gray-300">Design beautiful and intuitive experiences for our products.</p>
@@ -287,7 +312,7 @@ const Career = () => {
                 </div>
 
                 <div className="flex flex-col border border-gray-700 rounded-2xl p-6 w-full md:w-[300px] transform transition duration-500 hover:scale-105 hover:shadow-2xl"
-                    style={{boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}}>
+                    style={{boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}} data-aos="flip-left" data-aos-duration="3000">
                     <h3 className="text-xl font-semibold mb-2">Backend Engineer</h3>
                     <p className="mb-4 text-gray-400">Remote • Full-time</p>
                     <p className="mb-6 text-gray-300">Build scalable APIs and ensure performance and security.</p>
@@ -297,36 +322,36 @@ const Career = () => {
         </div>
     </section>
 
-    <section className="container mx-auto px-6 py-20">
+    <section className="container mx-auto sm:!px-6 !px-4 py-12">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 text-white">
-            <div>
+            <div data-aos="zoom-in" data-aos-duration="3000">
                 <p className="tracking-widest text-sm">[ OUR PRINCIPLES ]</p>
                 <h1 className="text-4xl md:text-5xl font-semibold mt-2">Coding ≥ ∀ x ∀ x</h1>
             </div>
-            <p className="md:max-w-lg">We are driven by ambitious goals, fast execution, and a strong sense of urgency. Join us if you want to shape the next generation of AI models and products.</p>
+            <p className="md:max-w-lg" data-aos="zoom-in" data-aos-duration="3000">We are driven by ambitious goals, fast execution, and a strong sense of urgency. Join us if you want to shape the next generation of AI models and products.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-16 pt-12">
-            <div className="flex flex-col gap-12 border-r text-white border-gray-800 pr-8">
-                <div>
+        <div className="grid md:grid-cols-3 gap-8 mt-16 pt-2 sm:pt-12">
+            <div className="flex flex-col gap-12 md:border-r text-white border-gray-800 pr-8">
+                <div data-aos="zoom-in" data-aos-duration="3000">
                     <div className="text-2xl mb-16"><FaRegUser className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">Competitive compensation</h3>
                     <p className="text-gray-400 text-md mt-1">Competitive cash and equity-based compensation packages to attract top talent.</p>
                 </div>
-                <div>
+                <div data-aos="zoom-in" data-aos-duration="3000">
                     <div className="text-2xl mb-16"><IoCalendarOutline className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">Flexible vacation</h3>
                     <p className="text-gray-400 text-md mt-1">We work hard but avoid burn out. Take time off when you need it.</p>
                 </div>
             </div>
 
-            <div className="flex flex-col gap-12 border-r text-white border-gray-800 pr-8">
-                <div>
+            <div className="flex flex-col gap-12 md:border-r text-white border-gray-800 pr-8">
+                <div data-aos="zoom-in" data-aos-duration="3000">
                     <div className="text-2xl mb-16"><LuStethoscope className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">Health and wellness</h3>
                     <p className="text-gray-400 text-md mt-1">Comprehensive health insurance including medical, dental, vision, and disability coverage.</p>
                 </div>
-                <div>
+                <div data-aos="zoom-in" data-aos-duration="3000">
                     <div className="text-2xl mb-16"><TbWorld className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">Visa sponsorship</h3>
                     <p className="text-gray-400 text-md mt-1">We support international talent with visa sponsorship to join our team.</p>
@@ -334,12 +359,12 @@ const Career = () => {
             </div>
 
             <div className="flex flex-col gap-12 text-white">
-                <div>
+                <div data-aos="zoom-in" data-aos-duration="3000">
                     <div className="text-2xl mb-16"><GiSelfLove className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">Life and family</h3>
                     <p className="text-gray-400 text-md mt-1">Life and AD&D insurance and fertility benefits to ensure our team’s well-being and peace of mind.</p>
                 </div>
-                <div>
+                <div data-aos="zoom-in" data-aos-duration="3000">
                     <div className="text-2xl mb-16"><FaRegClock className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">401(k) plan</h3>
                     <p className="text-gray-400 text-md mt-1">Retirement savings plan to secure your financial future.</p>
@@ -349,7 +374,7 @@ const Career = () => {
     </section>
 
     <CareerAcc />
-    </>
+    </div>
   )
 }
 
