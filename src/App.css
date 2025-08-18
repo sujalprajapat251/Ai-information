@@ -6,6 +6,30 @@
   width: 1700px;
 }
 
+/* Width of scrollbar */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* Track (background of scrollbar) */
+::-webkit-scrollbar-track {
+  background: transparent;
+  background-size: cover;
+}
+
+/* Thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: url("./Asset/Home/robot1.png") no-repeat center;
+  background-size: contain;
+  border-radius: 8px;
+  width: 30px;
+}
+
+/* Optional: hover effect on thumb */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: url("./Asset/Home/ai4.png") no-repeat center;
+  background-size: contain;
+} */
 
 
 @media (min-width: 1650px) and (max-width: 1849px){

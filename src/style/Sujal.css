@@ -212,7 +212,7 @@
 }
 
 
-@keyframes scroll {
+@keyframes scroll-up {
   0% {
     transform: translateY(0);
   }
@@ -221,8 +221,21 @@
   }
 }
 
-.animate-scroll {
-  animation: scroll 20s linear infinite;
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll-up {
+  animation: scroll-up 3s linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scroll-down 3s linear infinite;
 }
 
 /* optional reverse direction */
@@ -230,7 +243,9 @@
   animation-direction: reverse;
 }
 
-
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
 
 
 /* umang css */

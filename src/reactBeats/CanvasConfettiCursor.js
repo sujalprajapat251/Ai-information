@@ -107,7 +107,7 @@ export const CanvasConfettiCursor = ({
     if (!ctx || !canvasRef.current) return;
 
     const loop = (time) => {
-      ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+      ctx.clearRect(0, 0, canvasRef.current?.width, canvasRef.current?.height);
 
       // Spawn particles on schedule
       if (time - lastSpawn.current > frequency) {
