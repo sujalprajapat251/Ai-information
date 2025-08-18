@@ -139,32 +139,31 @@ useEffect(() => {
               </div>
               <div>
                 <label className="block mb-2 text-sm font-medium">Company name</label>
-                <input type="text" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                <input type="text" name='companyName' className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block mb-2 text-sm font-medium">First name</label>
-                  <input type="text" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="text" name='firstName' className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium">Last name</label>
-                  <input type="text" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="text" name='lastName' className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block mb-2 text-sm font-medium">Work email</label>
-                  <input type="email" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="email" name='workEmail' className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium">Phone number</label>
-                  <input type="tel" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="tel" name='phoneNumber' className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
                 </div>
               </div>
               <div>
-                <label className="block mb-2 text-sm font-medium">Can you share more about your business needs and challenges?
-                </label>
-                <textarea rows="5" className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"></textarea>
+                <label className="block mb-2 text-sm font-medium">Can you share more about your business needs and challenges?</label>
+                <textarea rows="5" name='businessNeeds' className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"></textarea>
               </div>
               <button type="submit" className="bg-gray-800 hover:bg-gray-700 px-6 py-2 rounded-full text-sm">Submit</button>
             </form>
