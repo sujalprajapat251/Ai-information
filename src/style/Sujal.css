@@ -210,6 +210,29 @@
 		min-width: 280px;
 	}
 }
+
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+/* optional reverse direction */
+.reverse {
+  animation-direction: reverse;
+}
+
+
+
+
 /* umang css */
 html {
   height: 100%;

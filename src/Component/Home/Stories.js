@@ -4,6 +4,7 @@ import {
     DraggableCardContainer,
 } from "../../reactBeats/draggable-card";
 import { motion, AnimatePresence } from "framer-motion";
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 const blogData = [
     // Column 1
@@ -15,6 +16,69 @@ const blogData = [
         tags: ["Design"],
         column: 1,
         className: "md:absolute top-10 left-[20%] rotate-[-5deg]",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1697909623564-3dae17f6c20b?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "How to Integrate Combine with SwiftUI to Make Better Apps",
+        description:
+            "SwiftUI and Combine are Apple’s latest frameworks. With their introduction, the...",
+        tags: ["Design"],
+        column: 1,
+        className: "md:absolute top-40 left-[25%] rotate-[-7deg]",
+
+    },
+
+    // Column 2
+    {
+        img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800",
+        title: "How Apple’s M1 Chips Make macOS Development Much Less Costly",
+        description:
+            "The macOS market share is much smaller than the iOS one. There are many, many more iPhones out there, they dominate Apple’s revenues so that’s where most of their attention goes.",
+        tags: ["Development"],
+        column: 2,
+        className: "md:absolute top-5 left-[40%] rotate-[8deg]",
+
+    },
+    {
+        img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800",
+        title: "Why AI Assistants Are Changing Software Development",
+        description:
+            "From debugging to code generation, AI tools are making developers faster and more productive.",
+        tags: ["Development", "Management"],
+        column: 2,
+        className: "md:absolute top-32 left-[55%] rotate-[10deg]",
+
+    },
+
+
+    // Column 3
+    {
+        img: "https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "How To Outsource Web Development And Web Design",
+        description:
+            "Everything is within reach of today’s individual. All you need is a phone or a laptop...",
+        tags: ["Design", "Development"],
+        column: 3,
+        className: "md:absolute top-20 right-[35%] rotate-[2deg]",
+
+    },
+    {
+        img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800",
+        title: "What Makes Something Beautiful and How To...",
+        tags: ["Design"],
+        column: 3,
+        className: "md:absolute top-24 left-[45%] rotate-[-7deg]",
+
+    },
+    {
+        img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Balancing Creativity and Functionality in Product Design",
+        description:
+            "Design is not just about aesthetics—it must also serve the intended function efficiently.",
+        tags: ["Design", "Marketing"],
+        column: 3,
+        className: "md:absolute top-8 left-[30%] rotate-[4deg]",
+
     },
     {
         img: "https://images.unsplash.com/photo-1697909623564-3dae17f6c20b?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -136,6 +200,7 @@ const Stories = () => {
             item.tags.some((tag) => tag.toLowerCase() === tab.toLowerCase())
         );
     }, [tab]);
+    const infiniteData = [...blogData, ...blogData];
     return (
         <>
             <div className="bg-black text-white font-sans min-h-screen px-6 lg:px-20 2xl:py-16 py-8">
@@ -204,47 +269,48 @@ const Stories = () => {
                     ))}
 
                 </main> */}
-                <DraggableCardContainer className="relative md:flex min-h-screen w-full items-center justify-center overflow-clip hidden top-10">
-                    <p className="absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-black text-neutral-400 md:text-4xl dark:text-neutral-800">
-                        {tab}
-                    </p>
-                    {filterData.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            layoutId={`card-${index}`}
-                            className={item.className}
-                            onClick={() => setSelectedItem({ ...item, index })}
-                            style={{ cursor: "pointer" }}
 
+                <p className=" mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-black text-neutral-400 md:text-4xl dark:text-neutral-800">
+                    {tab}
+                </p>
+                <div className="relative h-[600px] overflow-hidden hidden md:block">
+                    <div className="absolute w-full animate-scroll">
+                        <ResponsiveMasonry
+                            columnsCountBreakPoints={{768: 2, 1024: 3, 1440: 5 }}
                         >
-                            <DraggableCardBody className={`${item.className} flex flex-col`} >
-                                <article >
-                                    {item.img && (
-                                        <img
-                                            src={item.img}
-                                            alt={item.title}
-                                            className="pointer-events-none relative z-10 h-[200px] w-full object-cover"
-                                        />
-                                    )}
-
-                                    <hr className="mt-3" />
-
-                                    <div className="p-3">
-                                        {item.tags && (
-                                            <p className="text-xs text-gray-400 mt-2">
-                                                #{item.tags.join(" #")}
-                                            </p>
-                                        )}
-                                        <h2 className="font-semibold text-lg mt-4">
-                                            {item.title}
-                                        </h2>
-
-                                    </div>
-                                </article>
-                            </DraggableCardBody>
-                        </motion.div>
-                    ))}
-                </DraggableCardContainer>
+                            <Masonry gutter="16px">
+                                {infiniteData.map((item, index) => (
+                                    <motion.div
+                                        key={index}
+                                        layoutId={`smcard-${index}`}
+                                        className="bg-themeblack p-6 g-4 w-full mt-4"
+                                    >
+                                        <article>
+                                            {item.img && (
+                                                <img
+                                                    src={item.img}
+                                                    alt={item.title}
+                                                    className="h-[200px] w-full object-cover"
+                                                />
+                                            )}
+                                            <hr className="mt-3" />
+                                            <div className="p-3">
+                                                {item.tags && (
+                                                    <p className="text-xs text-gray-400 mt-2">
+                                                        #{item.tags.join(" #")}
+                                                    </p>
+                                                )}
+                                                <h2 className="font-semibold text-lg mt-4">
+                                                    {item.title}
+                                                </h2>
+                                            </div>
+                                        </article>
+                                    </motion.div>
+                                ))}
+                            </Masonry>
+                        </ResponsiveMasonry>
+                    </div>
+                </div>
                 <div className='md:hidden flex flex-col w-full overflow-hidden'>
                     {filterData.map((item, index) => (
                         <motion.div
