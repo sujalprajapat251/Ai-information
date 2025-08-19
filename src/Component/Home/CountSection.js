@@ -7,10 +7,10 @@ import CountUp from '../../reactBeats/CountUp'
 const CountSection = () => {
 
     var data = [
-        { title: 'happy client', icon: happy, value: 400 },
-        { title: 'Project completed', icon: project, value: 600 },
+        { title: 'happy client', icon: happy, value: 15 },
+        { title: 'Project completed', icon: project, value: 15 },
         { title: 'experience', icon: experience, value: 7 },
-        { title: 'developer', icon: developer, value: 30 },
+        { title: 'developer', icon: developer, value: 500 },
     ]
 
     return (

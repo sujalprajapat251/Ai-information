@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { IoIosArrowDown, IoIosSearch, IoIosMenu, IoIosClose } from 'react-icons/io';
 import { Link, useLocation } from 'react-router-dom';
 
-import logo from '../Asset/logo.png'
+import logo from '../Asset/logo.svg'
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

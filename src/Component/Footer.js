@@ -8,7 +8,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { FiChevronRight } from "react-icons/fi";
 import { IoMdMail } from "react-icons/io";
 import canada from '../Asset/canada.svg'
-import logo from '../Asset/logo.png'
+import logo from '../Asset/logo.svg'
 
 
 import gemini from '../Asset/Footer/Gemini.svg'
@@ -70,7 +70,7 @@ const Footer = () => {
           <li><img src={synthId} alt="" className='w-8 inline-block' /> SynthID</li>
           <li><img src={weatherNext} alt="" className='w-8 inline-block'/> WeatherNext</li>
         </ul> */}
-        <div className="bg-black text-white rounded-lg max-w-md mb-4">
+        {/* <div className="bg-black text-white rounded-lg max-w-md mb-4">
           <div className="flex items-center gap-2 mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-6 h-6" viewBox="0 0 24 24">
               <path d="M12 2l9 4.5v2h-18v-2l9-4.5zm9 8.5v11.5h-18v-11.5h18zm-11 2h-2v7h2v-7zm5 0h-2v7h2v-7z"/>
@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
           <a href='https://www.google.com/maps/place/Kalathiya+Infotech/@21.2057926,72.8818075,132m/data=!3m1!1e3!4m9!1m2!2m1!1s102-103+Silver+Point,+Jivanjyot+Circle,+Nr+Yogi+chowk+Road+Surat+-395010!3m5!1s0x26cb5e4230fc8877:0xd36ccfe485cd6a01!8m2!3d21.2058961!4d72.8817848!16s%2Fg%2F11kbyh9bk6?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D' target="_blank" className="text-gray-300 mb-4">102–103 Silver Point, Jivanjyot Circle, <br />Nr Yogi chowk Road Surat –395010 <br />(Head Office)</a><br />
           <a href='https://www.google.com/maps/place/Shyam+Mandir+Rd,+Hukmchand+Nagar,+Althan,+Surat,+Gujarat+395007/@21.1457601,72.8003485,1060m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3be05203d87284f1:0xc550f071f2d34a38!8m2!3d21.1457601!4d72.8003485!16s%2Fg%2F11f2v569v2?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D' target='_blank' className="text-gray-300">402–405 Astha Shoppers NearBy <br />BhagvanMahavir Collage, Vesu, Surat –395007 <br />(Branch)</a>
-        </div>
+        </div> */}
         <div className=" text-white rounded-lg max-w-sm">
           <div className="flex items-center space-x-2 mb-4">
             <span className="text-white text-lg"><img src={canada} alt="" /></span>
