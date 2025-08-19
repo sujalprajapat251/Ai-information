@@ -23,7 +23,7 @@ const CountSection = () => {
                                 <img src={item.icon} alt="happy client" className='h-14 w-14'></img>
                             </div>
                             <div className='ms-4'>
-                                <h4 className='text-xl '>
+                                <h4 className='lg:text-xl text-base'>
                                     <CountUp
                                         from={0}
                                         to={item.value}

@@ -9,7 +9,8 @@ import contact from "../Asset/Contact/contact.jpg";
 import AOS from "aos";
 import * as Yup from "yup";
 import { useFormik } from 'formik';
-
+import axios from 'axios';
+const serverUrl = 'http://localhost:4000'
 const Contact = () => {
   useEffect(() => {
     function generateStars(count, size, duration) {
@@ -47,37 +48,37 @@ const Contact = () => {
 
   useEffect(() => {
     AOS.init({ duration: 2000, once: true });
-}, [])
+  }, [])
 
-useEffect(() => {
-  AOS.init({
-    duration: 1000,
-    once: false,
-    mirror: true,
-  });
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
 
-  const handleScroll = () => {
-    AOS.refresh();
-  };
+    const handleScroll = () => {
+      AOS.refresh();
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-}, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-const contVal = {
-  // comsize:"",
-  subject:"",
-  firstname:"",
-  lastname:"",
-  email:"",
-  num:"",
-  message:""
-}
+  const contVal = {
+    // comsize:"",
+    subject: "",
+    firstname: "",
+    lastname: "",
+    email: "",
+    num: "",
+    message: ""
+  }
 
-const ContactFormik = useFormik({
-    initialValues:contVal,
+  const ContactFormik = useFormik({
+    initialValues: contVal,
     validationSchema: Yup.object({
       // comsize: Yup.string().required("Company size is required"),
       subject: Yup.string()
@@ -92,16 +93,31 @@ const ContactFormik = useFormik({
         .email("Invalid email address")
         .required("Email is required"),
       num: Yup.string()
-        .matches(/^[0-9]{10,15}$/, "Phone number must be 10–15 digits")
+        .matches(/^\+?[0-9]{10,15}$/, "Phone number must be 10–15 digits")
         .required("Phone number is required"),
       message: Yup.string()
         .min(10, "Message must be at least 10 characters")
         .required("Message is required"),
     }),
-    onSubmit:()=>{
-       
+    onSubmit: (values, { resetForm }) => {
+      console.log(values);
+
+      axios.post(`${serverUrl}/contactus`, {
+        firstName: values.firstname,
+        lastName: values.lastname,
+        workEmail: values.email,
+        phoneNumber: values.num,
+        description: values.message,
+      })
+        .then((response) => {
+          alert('Our team will contact you soon!');
+          resetForm(); // <-- now works
+        })
+        .catch((error) => {
+          console.error("Error submitting form:", error);
+        });
     }
-})
+  })
 
   return (
     <>
@@ -113,7 +129,7 @@ const ContactFormik = useFormik({
           <h1 className="text-5xl font-normal pb-20">Contact</h1>
 
           <div className="flex flex-col md:flex-row gap-8 border-gray-800 pb-12">
-            <div className="flex flex-col gap-20 md:border-r border-gray-800 pr-8 flex-1" data-aos="fade-up"  data-aos-duration="3000">
+            <div className="flex flex-col gap-20 md:border-r border-gray-800 pr-8 flex-1" data-aos="fade-up" data-aos-duration="3000">
               <div className="text-2xl"><FaRegComment className="text-4xl" /></div>
               <div>
                 <h2 className="text-xl font-normal mb-4">Contact Product Support</h2>
@@ -125,7 +141,7 @@ const ContactFormik = useFormik({
               </div>
             </div>
 
-            <div className="flex flex-col gap-20 md:pl-8 flex-1" data-aos="fade-up"  data-aos-duration="3000">
+            <div className="flex flex-col gap-20 md:pl-8 flex-1" data-aos="fade-up" data-aos-duration="3000">
               <div className="text-2xl"><GiSelfLove className="text-4xl" /></div>
               <div>
                 <h2 className="text-xl font-normal mb-4">Contact Sales</h2>
@@ -155,11 +171,11 @@ const ContactFormik = useFormik({
           </div>
 
           <div className="flex flex-col md:flex-row gap-8 pt-8 text-sm">
-            <div data-aos="fade-up"  data-aos-duration="3000">
+            <div data-aos="fade-up" data-aos-duration="3000">
               <p className="uppercase font-medium text-[#7D8187]">Media</p>
               <p className="mt-1">media@x.ai</p>
             </div>
-            <div data-aos="fade-up"  data-aos-duration="3000">
+            <div data-aos="fade-up" data-aos-duration="3000">
               <p className="uppercase font-medium text-[#7D8187]">Safety</p>
               <p className="mt-1">safety@x.ai</p>
             </div>
@@ -170,7 +186,7 @@ const ContactFormik = useFormik({
           <div className="flex flex-col md:flex-row gap-8 items-stretch">
             <div className="md:w-1/2 w-full" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
               <div className="h-full">
-                <img src={contact} alt="Contact" className="w-full h-full object-cover rounded-lg"/>
+                <img src={contact} alt="Contact" className="w-full h-full object-cover rounded-lg" />
               </div>
             </div>
             <form onSubmit={ContactFormik.handleSubmit} className="w-full md:w-1/2 space-y-6 h-full" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
@@ -188,29 +204,29 @@ const ContactFormik = useFormik({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block mb-2 text-sm font-medium">First name</label>
-                  <input type="text" name='firstname' value={ContactFormik.values.firstname} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="text" name='firstname' value={ContactFormik.values.firstname} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500" />
                   {ContactFormik.touched.firstname && ContactFormik.errors.firstname && (<p className="text-red-500 text-xs">{ContactFormik.errors.firstname}</p>)}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium">Last name</label>
-                  <input type="text" name='lastname' value={ContactFormik.values.lastname} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="text" name='lastname' value={ContactFormik.values.lastname} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500" />
                   {ContactFormik.touched.lastname && ContactFormik.errors.lastname && (<p className="text-red-500 text-xs">{ContactFormik.errors.lastname}</p>)}
                 </div>
               </div>
               <div>
                 <label className="block mb-2 text-sm font-medium">Subject</label>
-                <input type="text" name='subject' value={ContactFormik.values.subject} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                <input type="text" name='subject' value={ContactFormik.values.subject} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500" />
                 {ContactFormik.touched.subject && ContactFormik.errors.subject && (<p className="text-red-500 text-xs">{ContactFormik.errors.subject}</p>)}
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block mb-2 text-sm font-medium">Work email</label>
-                  <input type="email" name='email' value={ContactFormik.values.email} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="email" name='email' value={ContactFormik.values.email} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500" />
                   {ContactFormik.touched.email && ContactFormik.errors.email && (<p className="text-red-500 text-xs">{ContactFormik.errors.email}</p>)}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium">Phone number</label>
-                  <input type="tel" name='num' value={ContactFormik.values.num} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                  <input type="tel" name='num' value={ContactFormik.values.num} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500" />
                   {ContactFormik.touched.num && ContactFormik.errors.num && (<p className="text-red-500 text-xs">{ContactFormik.errors.num}</p>)}
                 </div>
               </div>
@@ -224,7 +240,7 @@ const ContactFormik = useFormik({
             </form>
           </div>
         </div>
-    </div>
+      </div>
     </>
   )
 }

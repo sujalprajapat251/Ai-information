@@ -42,11 +42,11 @@ useEffect(() => {
                      <div className='lg:w-1/2 w-full bg-[#222222] lg:mt-0  mt-5'>
                          <div className='sm:p-[65px] sx:p-[35px] p-[20px] text-white'>
                             <p data-aos="fade-left">Mentorship programs</p>
-                            <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[46px] leading-[28px] mt-4 md:block hidden" data-aos="fade-left" >Get hands-on experience in AI <br /> research</h3>
-                            <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[46px] leading-[28px] mt-4 md:hidden block" data-aos="fade-left" >Get hands-on experience in AI research</h3>
-                            <p className='sm:text-[16px] text-[14px] mt-10 sm:pt-4' data-aos="fade-left" >We’re passionate about introducing people to the extraordinary world of AI. Our AI Mentorship (AIM) and EMEA programs let PhD candidates conduct open science research in collaboration with their university, academic advisor, and AI at Meta mentor participants as full-time AI at Meta employees.</p>
-                            <p className='sm:text-[16px] text-[14px] mt-5' data-aos="fade-left" >We currently have agreements in place with prestigious universities in the United States, France, Israel and the United Kingdom.</p>
-                            <p className='mt-10 sm:pt-4 sm:text-[18px] text-[16px] font-[600]' data-aos="fade-left" >For more about these programs, reach out to us at MetaAIM@meta.com</p>
+                            <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[46px] leading-[28px] mt-4 md:block hidden" data-aos="fade-left" >Gain practical exposure in AI <br></br> research</h3>
+                            <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[46px] leading-[28px] mt-4 md:hidden block" data-aos="fade-left" >Gain practical exposure in AI research</h3>
+                            <p className='sm:text-[16px] text-[14px] xl:mt-10 mt-5 sm:pt-4' data-aos="fade-left" >Hands-on learning—or experiential learning—is key for building real expertise. Rather than just reading or listening, you engage directly with tasks, tools, and environments, which helps solidify understanding and foster innovation. This method is widely recognized for its effectiveness: learning through doing forms stronger and lasting knowledge.</p>
+                            {/* <p className='sm:text-[16px] text-[14px] mt-5' data-aos="fade-left" >We currently have agreements in place with prestigious universities in the United States, France, Israel and the United Kingdom.</p>
+                            <p className='mt-10 sm:pt-4 sm:text-[18px] text-[16px] font-[600]' data-aos="fade-left" >For more about these programs, reach out to us at MetaAIM@meta.com</p> */}
                          </div>
                      </div>
                  </div>

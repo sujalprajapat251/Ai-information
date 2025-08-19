@@ -32,6 +32,7 @@
   <table>
     <thead>
       <tr>
+        <th>Sr No.</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
@@ -42,8 +43,9 @@
     </thead>
     <tbody>
       <% if (contacts && contacts.length > 0) { %>
-        <% contacts.forEach(contact => { %>
+        <% contacts.forEach((contact,index) => { %>
           <tr>
+            <td><%= index + 1 %></td>
             <td><%= contact.firstName %></td>
             <td><%= contact.lastName %></td>
             <td><%= contact.workEmail %></td>

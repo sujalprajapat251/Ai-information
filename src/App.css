@@ -1,3 +1,8 @@
+:root {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -26,11 +31,14 @@
   width: 2px;
 }
 
-/* Optional: hover effect on thumb */
-/* ::-webkit-scrollbar-thumb:hover {
-  background: url("./Asset/Home/ai4.png") no-repeat center;
-  background-size: contain;
-} */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 
 @media (min-width: 1650px) and (max-width: 1849px){

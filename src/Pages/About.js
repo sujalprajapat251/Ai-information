@@ -23,24 +23,24 @@ const About = () => {
 
   const accordionData = [
     {
-      title: "Openness",
+      title: "Sincerity",
       content:
-        "We believe the latest advancements in AI should be published and shared for the community to learn from and build upon.",
+        "Our belief is that AI’s latest advances should be publicly shared, enabling the community to learn and extend them.",
     },
     {
       title: "Collaboration",
       content:
-        "We collaborate openly with both internal and external partners to share knowledge and cultivate diverse perspectives and needs.",
+        "We engage in transparent collaboration with both internal teams and external partners to exchange knowledge and foster a variety of viewpoints and requirements.",
     },
     {
-      title: "Excellence",
+      title: "Superiority",
       content:
-        "There’s no shortage of new possibilities to explore in AI. While our researchers focus on what they believe will have the most positive impact on people and society, our engineers are working to deliver meaningful advancements in products and experiences for all people.",
+        "The realm of AI offers an abundance of emerging opportunities. Our researchers dedicate themselves to initiatives they believe will most positively influence individuals and communities, whereas our engineers strive to implement significant enhancements in products and experiences accessible to everyone.",
     },
     {
       title: "Scale",
       content:
-        "To bring the benefits of AI to more people and improve accessibility, our research must account for both large scale data and computational needs.",
+        "To extend AI's advantages to a broader audience and enhance accessibility, our research must address the challenges associated with handling vast datasets and meeting substantial computational requirements.",
     },
   ];
 
@@ -150,8 +150,8 @@ const About = () => {
               <div className="container mx-auto">
                  <div className='text-white text-center'>
                     <p>People and culture</p>
-                    <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] leading-[28px] mt-4">The freedom to explore, <br /> discover and apply AI at scale</h3>
-                    <p className='sm:text-[20px] text-[18px] sm:mt-11 mt-5'>At Meta, we work across a set of key principles:</p>
+                    <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] leading-[28px] mt-4">The freedom to innovate, experiment, <br /> and scale AI solutions </h3>
+                    <p className='sm:text-[20px] text-[18px] sm:mt-11 mt-5'>At Meta, our work is guided by a core set of principles:</p>
                  </div>
                   <div className="flex justify-center mt-5">
                      <div className="2xl:w-4/5 w-full">
@@ -164,7 +164,7 @@ const About = () => {
                                return (
                                  <div key={index} data-aos="fade-right">
                                    {/* Header */}
-                                   <button onClick={() => toggle(index)} className="flex w-full my-8 justify-between text-white sm:text-[20px] text-[18px] items-center text-left font-semibold text-lg focus:outline-none">
+                                   <button onClick={() => toggle(index)} className="flex w-full lg:my-8 my-4 justify-between text-white sm:text-[20px] text-[18px] items-center text-left font-semibold text-lg focus:outline-none">
                                      {item.title}
                                      {isOpen ? (
                                        <BiMinus className="w-5 h-5 border-[1px] rounded-full text-white" />
@@ -200,8 +200,8 @@ const About = () => {
                              </div>
                              <div className="lg:w-1/2 w-full lg:px-[50px] px-5">
                                 <div className='text-white'>
-                                    <h3 className='text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] mt-4' data-aos="fade-left">Sharing our progress at industry events</h3>
-                                    <p className='mt-5' data-aos="fade-left">Throughout the year, we connect with the AI community through a variety of virtual, in-person and hybrid industry and academic events — as a participating sponsor or as host. At these events, our engineers and researchers share our latest product developments, research breakthroughs and publications.</p>
+                                    <h3 className='text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] mt-4' data-aos="fade-left">Showcasing our latest achievements during industry gatherings</h3>
+                                    <p className='mt-5' data-aos="fade-left">Throughout the year, we engage with the AI community via a wide range of virtual, in-person, and hybrid events—participating as sponsors or hosting these gatherings ourselves. At these forums, our engineers and researchers highlight our newest product innovations, research achievements, and publications.</p>
                                 </div>
                              </div>
                          </div>
@@ -230,10 +230,10 @@ const About = () => {
           <div className="relative z-10  px-5">
             <div className="text-center text-white">
               <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] leading-[28px] " data-aos="zoom-in">
-                Want to stay updated on all <br /> things AI at Meta?
+              Looking to keep up with  <br />everything AI at Meta? 
               </h3>
               <p className="mt-6 sm:text-[16px] text-[14px]" data-aos="zoom-in">
-                Sign up to receive our newsletter and be the first to know about AI at Meta news, events, research breakthroughs, and more.
+              Contact us  to get the latest updates on AI at Meta, including news, events, research discoveries, and much more.
               </p>
             </div>
           </div>

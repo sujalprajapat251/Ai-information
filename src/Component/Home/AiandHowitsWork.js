@@ -18,104 +18,107 @@ const aiDetails = [
         title: 'Generative AI',
         img: ai1,
         description: [
-            'Creates new content such as text, images, and audio using learned patterns.',
-            'Powered by models like GANs, VAEs, and large language models (LLMs).',
-            'Used in creative design, content generation, and simulation.',
-            'Learns from massive datasets to mimic human creativity.',
-            'Raises ethical concerns about misuse, bias, and authenticity.'
+            'Crafts brand-new content—like text, visuals, and sound—by learning from existing patterns.',
+            'Utilizes model types such as GANs, VAEs, and advanced language models (LLMs).',
+            'Applied in creative design, content creation, and simulation tasks.',
+            'Draws on enormous datasets to imitate human creativity.',
+            'Brings up ethical questions related to misuse, bias, and authenticity.'
         ]
     },
     {
         title: 'Data Science',
         img: ai2,
         description: [
-            'Extracts insights and knowledge from structured and unstructured data.',
-            'Combines statistics, programming, and domain expertise.',
-            'Uses tools like Python, R, SQL, and visualization platforms.',
-            'Involves processes like data cleaning, analysis, and modeling.',
-            'Supports decision-making in industries from healthcare to finance.'
+            'Extracts valuable insights from both structured and unstructured data.',
+            'Integrates statistical analysis, programming skills, and domain-specific knowledge.',
+            'Employs tools such as Python, R, SQL, and visualization platforms.',
+            'Encompasses activities like data cleaning, analysis, and modeling.',
+            'Aids in decision-making across various sectors, including healthcare and finance.'
         ]
     },
     {
         title: 'Inference',
         img: ai3,
         description: [
-            'Runs trained AI models to make predictions on new data.',
-            'Optimized for speed, accuracy, and resource efficiency.',
-            'Deployable on edge devices, cloud, or hybrid systems.',
-            'Crucial for real-time decision-making in AI applications.',
-            'Balances performance with scalability and cost.'
+            'Executes trained AI models on new data directly at the source.',
+            'Prioritizes rapid processing, precision, and efficient use of resources.',
+            'Can be deployed on local devices, cloud platforms, or a combination of both.',
+            'Essential for immediate decision-making in AI-driven applications.',
+            'Balances performance, scalability, and cost-effectiveness.'
         ]
     },
     {
         title: 'Conversational AI',
         img: ai4,
         description: [
-            'Enables machines to understand and respond to human language.',
-            'Includes chatbots, virtual assistants, and voice agents.',
-            'Uses NLP and NLU for human-like interaction.',
-            'Can be text-based, voice-based, or multimodal.',
-            'Improves customer support, automation, and personalization.'
+            'Empowers machines to comprehend and interact using human language.',
+            'Encompasses technologies like chatbots, virtual assistants, and voice agents.',
+            'Utilizes Natural Language Processing (NLP) and Natural Language Understanding (NLU) for human-like communication.',
+            'Supports interactions through text, voice, or a combination of both.',
+            'Enhances customer support, automation, and personalization across various industries.'
         ]
     },
     {
         title: 'Vision AI',
         img: ai5,
         description: [
-            'Enables machines to interpret and understand visual data.',
-            'Uses computer vision techniques and deep learning models.',
-            'Supports facial recognition, object detection, and OCR.',
-            'Used in autonomous vehicles, security, and medical imaging.',
-            'Faces challenges with accuracy, bias, and privacy.'
+            'Enables machines to interpret and understand visual information.',
+            'Utilizes computer vision techniques and deep learning models.',
+            'Supports facial recognition, object detection, and optical character recognition (OCR).',
+            'Applied in autonomous vehicles, security systems, and medical imaging.',
+            'Faces challenges related to accuracy, bias, and privacy concerns.'
         ]
     },
     {
         title: 'Cybersecurity AI',
         img: ai6,
         description: [
-            'Uses AI to detect, prevent, and respond to cyber threats.',
-            'Analyzes network patterns to identify anomalies.',
-            'Employs predictive analytics for threat forecasting.',
-            'Automates response to phishing, malware, and intrusions.',
-            'Adapts to counter evolving cybercriminal tactics.'
+            'Utilizes artificial intelligence to identify, prevent, and respond to cyber threats.',
+            'Analyzes network patterns to detect anomalies indicative of potential threats.',
+            'Employs predictive analytics to anticipate and mitigate future cyber risks.',
+            'Automates responses to phishing attacks, malware infections, and unauthorized intrusions.',
+            'Adapts to counter evolving tactics employed by cybercriminals.'
         ]
     }
 ];
 const steps = [
     {
         number: 1,
+        img:ai1,
         icon: step1,
-        title: "Sign up & connect your data",
+        title: "Create your account and link your tools.",
         description: [
             "Create your account in minutes and securely connect your datasets, tools, or APIs.",
-            "We use enterprise-grade encryption to keep your data safe while ensuring smooth integration."
+            "We implement enterprise-grade encryption to ensure your data remains safe while facilitating smooth integration."
         ]
     },
     {
         number: 2,
+        img:ai1,
         icon: step2,
-        title: "AI analyses your data",
+        title: "Automated models assess your data.",
         description: [
-            "Our advanced algorithms process your information and detect key trends.",
-            "This deep analysis uncovers hidden opportunities you can act on immediately."
+            "Our sophisticated algorithms analyze your data and identify significant patterns.",
+            "By leveraging AI's capabilities, we identify valuable insights within your data, enabling you to make informed decisions swiftly."
         ]
     },
     {
         number: 3,
+        img:ai1,
         icon: step3,
-        title: "Get smart recommendations",
+        title: "Obtain insightful recommendations.",
         description: [
-            "Receive actionable suggestions generated by our AI engine.",
-            "From automation workflows to predictive analytics, we help you make better decisions faster."
+            "Our advanced algorithms analyze your data to uncover patterns and trends, providing you with practical recommendations. From automation workflows to predictive analytics, we enable you to make informed decisions swiftly."
         ]
     },
     {
         number: 4,
+        img:ai1,
         icon: step4,
-        title: "Optimise continuously",
+        title: "Keep improving",
         description: [
-            "Our AI learns from every interaction and adapts to improve accuracy over time.",
-            "Your results keep getting better without extra effort from you."
+            "Our AI continually adapts based on each interaction, becoming more precise as time goes on.",
+            "Your outcomes steadily improve, all without any additional work from you."
         ]
     }
 ];
@@ -129,11 +132,11 @@ const AiandHowitsWork = () => {
     const [selectStep, setSelectStep] = useState(0);
 
     return (
-        <div className="relative overflow-hidden">
-            <div className="bg-black xl:py-10 py-6">
+        <div className="container relative overflow-hidden">
+            <div className="bg-black  pt-8 lg:pt-16 ">
                 <h2 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white text-center md:mb-5 mb-3 2xl:leading-[60px] py-5" data-aos="fade-up"><span className="text-themedark fond-extrabold">Artificial </span> Intelligence</h2>
                 
-                <article class="card__container container p-[30px] ">
+                <article class="card__container container  ">
                     {aiDetails.map((item) => {
                         return (
                             <div class="card mobile p-3 py-5 cursor-pointer" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" tabindex="0" style={{ backgroundImage: `url(${item.img})` }}>
@@ -142,7 +145,7 @@ const AiandHowitsWork = () => {
                                     <ul className="text-[#D3D3D3]   sm:text-base text-xs text-center h-full py-8">
                                         {item.description.map((des) => {
                                             return (
-                                                <li className="mb-3">{des}</li>
+                                                <li className="mb-2">{des}</li>
                                             )
                                         })}
                                         <li></li>
@@ -153,10 +156,10 @@ const AiandHowitsWork = () => {
                     })}
                 </article>
             </div>
-            <div className=" bg-black xl:py-10 py-6">
+            <div className=" bg-black  pt-8 lg:pt-16 ">
                 <div>
                     <h2 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white text-center md:mb-5 mb-3 2xl:leading-[60px]" data-aos="fade-up"><span className="text-themedark fond-extrabold">How it works</span></h2>
-                    <p className="text-[#f0f0f0] text-center sm:text-base text-xs  md:mb-5 mb-3  px-5" data-aos="fade-up" > AI Company helps you achieve better results with smart automation</p>
+                    <p className="text-[#f0f0f0] text-center sm:text-base text-xs  md:mb-5 mb-3  px-5" data-aos="fade-up" > Our AI-powered company enables you to attain superior outcomes through intelligent automation.</p>
                     {/* <h2 className="text-3xl font-bold text-white text-center mb-2 w-full ">
                         How it works
                     </h2>
@@ -172,7 +175,7 @@ const AiandHowitsWork = () => {
                             autoplay
                         />
                     </div>
-                    <section className="2xl:py-16 py-8 2xl:w-[60%] h-full">
+                    <section className="pt-8 lg:pt-16 2xl:w-[60%] h-full">
                         <div className=" mx-auto px-4 h-full">
                             <div className="flex flex-col md:flex-row gap-8 text-white h-full" data-aos="fade-left" data-aos-duration={3000}>
                                 {steps.map((step, id) => (
@@ -180,6 +183,7 @@ const AiandHowitsWork = () => {
                                         key={step.number}
                                         className={`bg-themeblack rounded-lg shadow-lg p-6 text-center relative transition-all duration-500 cursor-pointer overflow-hidden   h-[350px] flex-shrink-0 ${selectStep === id ? "flex-[5]" : "flex-[1]"}`}
                                         onClick={() => { setSelectStep(id) }}
+                                        
                                     >
                                         <div className=" m-auto  border-themedark text-white rounded-full  w-16 h-16  font-bold text-lg">
                                             <img

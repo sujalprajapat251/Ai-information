@@ -296,7 +296,7 @@ const Stories = () => {
         if (window.innerWidth >= 1440) return 5;
         if (window.innerWidth >= 1200) return 4;
         if (window.innerWidth >= 1024) return 3;
-        if (window.innerWidth >= 768) return 2;
+        if (window.innerWidth >= 768) return 3;
         return 1;
     };
 
@@ -323,14 +323,14 @@ const Stories = () => {
                         <h2 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white text-center md:mb-5 mb-3 2xl:leading-[60px]" data-aos="fade-up">This is where we tell <span className="text-themedark fond-extrabold">stories</span></h2>
 
                     </div>
-                    <Link to="/contact"> 
+                    <Link to="/contact" className='ms-[10px]'> 
                         <button className="bg-white text-black px-4 py-2">Contact Us</button>
                     </Link>
                 </header>
 
 
                 {/* Tabs */}
-                <div className="flex gap-6 overflow-auto" data-aos="fade-up">
+                <div className="flex gap-6 overflow-auto no-scrollbar" data-aos="fade-up">
                     {tabs.map((t) => (
                         <button
                             key={t}

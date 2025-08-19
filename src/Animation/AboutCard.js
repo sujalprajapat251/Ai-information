@@ -132,7 +132,7 @@ const AboutCard = () => {
               <p className="text-white sm:text-[20px] text-[18px]">{card.title}</p>
               <p className="text-[#9aa0a6] sm:text-[16px] text-[14px] leading-[20px] mt-2">{card.text}</p>
               <p className="flex justify-end">
-                <FaArrowRight
+                <p
                   ref={(el) => (arrowRefs.current[i] = el)}
                   className="text-white mt-6 mb-4 opacity-70 transform-gpu"
                 />

@@ -68,47 +68,27 @@ const Introduction = () => {
                     </Link>
                 </div>
             </div>
-            (
-            <section className="bg-black text-white px-8 py-16">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center" > 
+            <section className="bg-black text-white pt-8 lg:pt-16 container" >
+                <div className=" mx-auto grid lg:grid-cols-2 grid-cols-1 gap-8 items-center" > 
 
-                    {/* Left Text Content */}
                     <div data-aos="fade-up">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                            Powering Business Success with AI <br /> & Data Analytics Services
+                        <h1 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white md:mb-5 mb-3 2xl:leading-[60px] ">
+                            
+                        Empowering Business Outcomes <br></br>with  <span className="text-themedark fond-extrabold"> AI & Data Analytics</span>
                         </h1>
 
-                        <p className="text-gray-300 mb-4">
-                            Infosys <span className="font-bold">Data analytics</span> and AI, part of{" "}
-                            <a href="#" className="text-blue-400 underline">
-                                Infosys Topaz
-                            </a>{" "}
-                            enables enterprises to{" "}
-                            <span className="font-bold">
-                                unlock new business possibilities with Data analytics and AI.
-                            </span>
+                        
+
+                        <p className="text-[#f0f0f0]  sm:text-base text-xs md:mb-5 mb-3  " data-aos="fade-up" >
+                        Generative AI and sophisticated data analytics—built on a cloud infrastructure—are profoundly transforming business. This shift is irreversible. Future opportunities will drive companies toward becoming more interconnected, intelligent, and autonomous. They will form a digitally interwoven ecosystem where enterprises collaborate symbiotically to deliver value to consumers, citizens, and customers through strategic partnerships.
                         </p>
 
-                        <p className="text-gray-400 mb-4">
-                            The transformation unleashed by generative AI and advanced data
-                            analytics, with a cloud foundation, is changing business in profound,
-                            unalterable ways. Opportunities of the future will lead businesses to
-                            become more connected, more intelligent, and more autonomous creating a
-                            digital mesh of enterprises working together to deliver value to end
-                            consumers, citizens, and customers through a strategically crafted
-                            symbiotic and collaborative ecosystem.
-                        </p>
-
-                        <p className="text-gray-400 mb-6">
-                            Data & AI will help enterprises unlock these next generation opportunities
-                            to:
-                        </p>
+                   
 
 
                     </div>
 
-                    {/* Right Video/Image */}
-                    <div className="relative" data-aos="fade-up">
+                    <div className="relative w-full" data-aos="fade-up">
                         <video
                             ref={videoRef}
                             src={video}
