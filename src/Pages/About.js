@@ -109,7 +109,7 @@ const About = () => {
 
         {/* Foreground text */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
-          <p className="uppercase text-[#9aa0a6] text-[12px] sm:text-[14px] md:text-[16px] sm:mb-6 mb-3">
+          <p className="uppercase text-themedark text-[12px] sm:text-[14px] md:text-[16px] sm:mb-6 mb-3">
             Our mission
           </p>
           <TextType
@@ -132,7 +132,7 @@ const About = () => {
           <div className='container mx-auto'>
               <div className='text-center'>
                 <h2 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[42px] sx:leading-[35px] leading-[28px]">
-                   Explore our research
+                   Explore our <span className='text-themedark'>research</span> 
                 </h2>
                 <p className=" text-[#9aa0a6] text-[12px] sm:text-[14px] md:text-[16px] mt-4">
                     We work on some of the most complex and interesting challenges in AI.
@@ -150,7 +150,7 @@ const About = () => {
               <div className="container mx-auto">
                  <div className='text-white text-center'>
                     <p>People and culture</p>
-                    <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] leading-[28px] mt-4">The freedom to innovate, experiment, <br /> and scale AI solutions </h3>
+                    <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] leading-[28px] mt-4">The freedom to  <span className='text-themedark'>innovate, experiment, </span> <br /> and <span className='text-themedark'>scale AI</span> solutions </h3>
                     <p className='sm:text-[20px] text-[18px] sm:mt-11 mt-5'>At Meta, our work is guided by a core set of principles:</p>
                  </div>
                   <div className="flex justify-center mt-5">
@@ -230,7 +230,7 @@ const About = () => {
           <div className="relative z-10  px-5">
             <div className="text-center text-white">
               <h3 className="text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] leading-[28px] " data-aos="zoom-in">
-              Looking to keep up with  <br />everything AI at Meta? 
+              Looking to keep up with  <br />everything <span className='text-themedark'>AI</span> at Meta? 
               </h3>
               <p className="mt-6 sm:text-[16px] text-[14px]" data-aos="zoom-in">
               Contact us  to get the latest updates on AI at Meta, including news, events, research discoveries, and much more.

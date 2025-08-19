@@ -155,53 +155,28 @@ const Contact = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-8 border-gray-800">
   {/* Card 1 */}
   <div>
-    <div
-      className="lg:border-l border-[#1f2937] h-full"
-      data-aos="flip-left"
-      data-aos-easing="ease-out-cubic"
-      data-aos-duration="2000"
-    >
+    <div className="h-full" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
       <div><img src={xAi} alt="" className="w-10 mb-4" /></div>
-      <h3 className="text-xl mt-2">
-      Check out our official xAI account.
-      </h3>
-      <p className="text-[#7D8187] text-md pt-4">
-      Explore updates and insights directly from our xAI page.
-      </p>
+      <h3 className="text-xl mt-2">Check out our official xAI account.</h3>
+      <p className="text-[#7D8187] text-md pt-4">Explore updates and insights directly from our xAI page.</p>
     </div>
   </div>
 
   {/* Card 2 */}
   <div>
-    <div
-      className="lg:border-l border-[#1f2937] h-full"
-      data-aos="flip-left"
-      data-aos-easing="ease-out-cubic"
-      data-aos-duration="2000"
-    >
+    <div className="h-full" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
       <div><img src={grok} alt="" className="w-10 mb-4" /></div>
-      <h3 className="text-xl mt-2">
-      Explore Grok on
-      </h3>
-      <p className="text-[#7D8187] text-md pt-4">
-      Head over to our official Grok account for the latest updates.
-      </p>
+      <h3 className="text-xl mt-2">Explore Grok on</h3>
+      <p className="text-[#7D8187] text-md pt-4">Head over to our official Grok account for the latest updates.</p>
     </div>
   </div>
 
   {/* Card 3 */}
   <div>
-    <div
-      className="lg:border-l border-[#1f2937] h-full"
-      data-aos="flip-left"
-      data-aos-easing="ease-out-cubic"
-      data-aos-duration="2000"
-    >
+    <div className="h-full" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
       <div><img src={joinGrok} alt="" className="w-10 h-10 mb-4" /></div>
       <h3 className="text-xl mt-2">Connect with Grok on Discord</h3>
-      <p className="text-[#7D8187] text-md pt-4">
-      Join our official Grok Discord community to stay engaged.
-      </p>
+      <p className="text-[#7D8187] text-md pt-4">Join our official Grok Discord community to stay engaged.</p>
     </div>
   </div>
 

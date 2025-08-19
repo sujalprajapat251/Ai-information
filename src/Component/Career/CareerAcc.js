@@ -76,7 +76,7 @@ useEffect(() => {
             <div className='container mx-auto py-12 sm:!px-6 !px-4'>
                <div className="flex justify-center" data-aos="zoom-in" data-aos-duration="3000">
                    <div className="3xl:w-1/3 lg:w-1/2  text-white">
-                      <h3 className="text-center text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] leading-[28px] mt-4">We Create Extraordinary Experiences</h3> 
+                      <h3 className="text-center text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] leading-[28px] mt-4">We Create <span className='text-themedark'>Extraordinary</span>  Experiences</h3> 
                       <p className='text-center mt-4 sm:text-[16px] text-[14px]'>Our work goes beyond technology — it sparks wonder and connection. From our Llama open-source language models to cutting-edge VR devices and Ray-Ban Meta smart glasses, we're pushing boundaries and shaping how AI influences the metaverse.</p>
                    </div>
                </div>
