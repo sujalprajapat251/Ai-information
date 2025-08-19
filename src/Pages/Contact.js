@@ -109,11 +109,12 @@ const ContactFormik = useFormik({
       <div id="stars2"></div>
       <div id="stars3"></div>
       <div className="text-white relative z-10">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <h1 className="text-5xl font-normal pb-20">Contact</h1>
+        <div className="max-w-6xl mx-auto px-6 py-8">
+          <h1 className="text-5xl font-normal pb-12">Contact</h1>
 
-          <div className="flex flex-col md:flex-row gap-8 border-gray-800 pb-12">
-            <div className="flex flex-col gap-20 md:border-r border-gray-800 pr-8 flex-1" data-aos="fade-up"  data-aos-duration="3000">
+          <div className="flex md:flex-nowrap flex-wrap  gap-8 border-gray-800 pb-8">
+            <div className=" sm:w-1/2 w-full " data-aos="fade-up"  data-aos-duration="3000">
+            <div className='flex flex-col gap-12 md:border-r border-gray-800 pr-8 flex-1'>
               <div className="text-2xl"><FaRegComment className="text-4xl" /></div>
               <div>
                 <h2 className="text-xl font-normal mb-4">Contact Product Support</h2>
@@ -123,9 +124,10 @@ const ContactFormik = useFormik({
                   <button className="px-4 py-2 border border-gray-700 rounded-full text-md hover:bg-gray-800">CALL SUPPORT</button>
                 </div>
               </div>
+              </div>
             </div>
 
-            <div className="flex flex-col gap-20 md:pl-8 flex-1" data-aos="fade-up"  data-aos-duration="3000">
+            <div className="flex sm:w-1/2 w-full flex-col gap-12 md:pl-8 flex-1" data-aos="fade-up"  data-aos-duration="3000">
               <div className="text-2xl"><GiSelfLove className="text-4xl" /></div>
               <div>
                 <h2 className="text-xl font-normal mb-4">Contact Sales</h2>
@@ -134,39 +136,76 @@ const ContactFormik = useFormik({
               </div>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row gap-8 py-12 border-gray-800">
-            <div className="md:border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-              <div><img src={xAi} alt="" className="w-10 mb-4" /></div>
-              <h3 className="text-xl mt-2">Visit xAI on <BsTwitterX className="text-sm inline-block" /></h3>
-              <p className="text-[#7D8187] text-md pt-4">Visit our official xAI{" "}<BsTwitterX className="text-sm inline-block" /> account.</p>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-8 border-gray-800">
+  {/* Card 1 */}
+  <div>
+    <div
+      className="lg:border-l border-[#1f2937] h-full"
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+    >
+      <div><img src={xAi} alt="" className="w-10 mb-4" /></div>
+      <h3 className="text-xl mt-2">
+      Check out our official xAI account.
+      </h3>
+      <p className="text-[#7D8187] text-md pt-4">
+      Explore updates and insights directly from our xAI page.
+      </p>
+    </div>
+  </div>
 
-            <div className="md:border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-              <div><img src={grok} alt="" className="w-10 mb-4" /></div>
-              <h3 className="text-xl mt-2">Visit Grok on <BsTwitterX className="text-sm inline-block" /></h3>
-              <p className="text-[#7D8187] text-md pt-4">Visit our official Grok{" "}<BsTwitterX className="text-sm inline-block" /> account.</p>
-            </div>
+  {/* Card 2 */}
+  <div>
+    <div
+      className="lg:border-l border-[#1f2937] h-full"
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+    >
+      <div><img src={grok} alt="" className="w-10 mb-4" /></div>
+      <h3 className="text-xl mt-2">
+      Explore Grok on
+      </h3>
+      <p className="text-[#7D8187] text-md pt-4">
+      Head over to our official Grok account for the latest updates.
+      </p>
+    </div>
+  </div>
 
-            <div className="md:border-l border-[#1f2937] pl-6 pt-12 pb-8 flex-1" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-              <div><img src={joinGrok} alt="" className="w-10 h-10 mb-4" /></div>
-              <h3 className="text-xl mt-2">Join Grok on Discord</h3>
-              <p className="text-[#7D8187] text-md pt-4">Visit our official Grok Discord community.</p>
-            </div>
-          </div>
+  {/* Card 3 */}
+  <div>
+    <div
+      className="lg:border-l border-[#1f2937] h-full"
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+    >
+      <div><img src={joinGrok} alt="" className="w-10 h-10 mb-4" /></div>
+      <h3 className="text-xl mt-2">Connect with Grok on Discord</h3>
+      <p className="text-[#7D8187] text-md pt-4">
+      Join our official Grok Discord community to stay engaged.
+      </p>
+    </div>
+  </div>
 
-          <div className="flex flex-col md:flex-row gap-8 pt-8 text-sm">
-            <div data-aos="fade-up"  data-aos-duration="3000">
-              <p className="uppercase font-medium text-[#7D8187]">Media</p>
-              <p className="mt-1">media@x.ai</p>
-            </div>
-            <div data-aos="fade-up"  data-aos-duration="3000">
-              <p className="uppercase font-medium text-[#7D8187]">Safety</p>
-              <p className="mt-1">safety@x.ai</p>
-            </div>
-          </div>
+  {/* Card 4 */}
+  <div className="sm:col-span-2 lg:col-span-3">
+    <div className="flex flex-col sm:flex-row gap-8 pt-6 text-sm">
+      <div data-aos="fade-up" data-aos-duration="3000">
+        <p className="uppercase font-medium text-[#7D8187]">Media</p>
+        <p className="mt-1">media@x.ai</p>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="3000">
+        <p className="uppercase font-medium text-[#7D8187]">Safety</p>
+        <p className="mt-1">safety@x.ai</p>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
 
-        <div className="container mx-auto sm:!px-6 !px-4 pb-16 overflow-hidden">
+        <div className="container mx-auto pb-16 overflow-hidden">
           <div className="flex flex-col md:flex-row gap-8 items-stretch">
             <div className="md:w-1/2 w-full" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
               <div className="h-full">
