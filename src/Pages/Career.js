@@ -295,7 +295,7 @@ const Career = () => {
         <div className="container mx-auto py-12 sm:!px-6 !px-4">
             <h2 className="text-3xl font-semibold mb-10 text-center">Open Positions</h2>
             <div className="flex flex-wrap justify-center gap-8">
-                <div className="flex flex-col border border-gray-700 rounded-2xl p-6 w-full md:w-[300px] transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+                <div className="flex flex-col justify-between border border-gray-700 rounded-2xl p-6 w-full md:w-[300px] transform transition duration-500 hover:scale-105 hover:shadow-2xl"
                     style={{ boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}} data-aos="flip-left" data-aos-duration="3000">
                     <h3 className="text-xl font-semibold mb-2">Frontend Developer</h3>
                     <p className="mb-4 text-gray-400">Remote • Full-time</p>
@@ -303,7 +303,7 @@ const Career = () => {
                     <a href="#" className="inline-block px-4 py-2 border border-gray-500 rounded-lg transition">Apply Now</a>
                 </div>
 
-                <div className="flex flex-col border border-gray-700 rounded-2xl p-6 w-full md:w-[300px] transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+                <div className="flex flex-col justify-between border border-gray-700 rounded-2xl p-6 w-full md:w-[300px] transform transition duration-500 hover:scale-105 hover:shadow-2xl"
                     style={{ boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}} data-aos="flip-left" data-aos-duration="3000">
                     <h3 className="text-xl font-semibold mb-2">UI/UX Designer</h3>
                     <p className="mb-4 text-gray-400">New York, NY • Hybrid</p>
@@ -311,7 +311,7 @@ const Career = () => {
                     <a href="#" className="inline-block px-4 py-2 border border-gray-500 rounded-lg transition">Apply Now</a>
                 </div>
 
-                <div className="flex flex-col border border-gray-700 rounded-2xl p-6 w-full md:w-[300px] transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+                <div className="flex flex-col justify-between border border-gray-700 rounded-2xl p-6 w-full md:w-[300px] transform transition duration-500 hover:scale-105 hover:shadow-2xl"
                     style={{boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}} data-aos="flip-left" data-aos-duration="3000">
                     <h3 className="text-xl font-semibold mb-2">Backend Engineer</h3>
                     <p className="mb-4 text-gray-400">Remote • Full-time</p>

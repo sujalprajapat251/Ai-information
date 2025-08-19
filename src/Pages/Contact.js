@@ -11,35 +11,39 @@ import * as Yup from "yup";
 import { useFormik } from 'formik';
 
 const Contact = () => {
-  function generateStars(count, size, duration) {
-    const star = document.createElement("div");
-    star.classList.add("star-layer");
-    star.style.width = size + "px";
-    star.style.height = size + "px";
-    star.style.animation = `animStar ${duration}s linear infinite`;
+  useEffect(() => {
+    function generateStars(count, size, duration) {
+      const star = document.createElement("div");
+      star.classList.add("star-layer");
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+      star.style.animation = `animStar ${duration}s linear infinite`;
 
-    let boxShadow = [];
-    for (let i = 0; i < count; i++) {
-      const x = Math.floor(Math.random() * window.innerWidth);
-      const y = Math.floor(Math.random() * 2000);
-      boxShadow.push(`${x}px ${y}px #FFF`);
+      let boxShadow = [];
+      for (let i = 0; i < count; i++) {
+        const x = Math.floor(Math.random() * window.innerWidth);
+        const y = Math.floor(Math.random() * 2000);
+        boxShadow.push(`${x}px ${y}px #FFF`);
+      }
+      star.style.boxShadow = boxShadow.join(", ");
+
+      const after = document.createElement("div");
+      after.style.position = "absolute";
+      after.style.top = "2000px";
+      after.style.width = size + "px";
+      after.style.height = size + "px";
+      after.style.boxShadow = star.style.boxShadow;
+
+      star.appendChild(after);
+      document.body.appendChild(star);
     }
-    star.style.boxShadow = boxShadow.join(", ");
-
-    const after = document.createElement("div");
-    after.style.content = '" "';
-    after.style.position = "absolute";
-    after.style.top = "2000px";
-    after.style.width = size + "px";
-    after.style.height = size + "px";
-    after.style.boxShadow = star.style.boxShadow;
-
-    star.appendChild(after);
-    document.body.appendChild(star);
-  }
-  generateStars(40, 1, 50);
-  generateStars(20, 2, 100);
-  generateStars(10, 3, 150);
+    generateStars(40, 1, 50);
+    generateStars(20, 2, 100);
+    generateStars(10, 3, 150);
+    return () => {
+      document.querySelectorAll(".star-layer").forEach(el => el.remove());
+    };
+  }, []);
 
   useEffect(() => {
     AOS.init({ duration: 2000, once: true });
@@ -63,8 +67,8 @@ useEffect(() => {
 }, []);
 
 const contVal = {
-  comsize:"",
-  comname:"",
+  // comsize:"",
+  subject:"",
   firstname:"",
   lastname:"",
   email:"",
@@ -75,10 +79,9 @@ const contVal = {
 const ContactFormik = useFormik({
     initialValues:contVal,
     validationSchema: Yup.object({
-      comsize: Yup.string().required("Company size is required"),
-      comname: Yup.string()
-        .min(2, "Company name must be at least 2 characters")
-        .required("Company name is required"),
+      // comsize: Yup.string().required("Company size is required"),
+      subject: Yup.string()
+        .required("subject is required"),
       firstname: Yup.string()
         .min(2, "First name must be at least 2 characters")
         .required("First name is required"),
@@ -171,7 +174,7 @@ const ContactFormik = useFormik({
               </div>
             </div>
             <form onSubmit={ContactFormik.handleSubmit} className="w-full md:w-1/2 space-y-6 h-full" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
-              <div>
+              {/* <div>
                 <label className="block mb-2 text-sm font-medium">Company size</label>
                 <select name='comsize' value={ContactFormik.values.comsize} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500">
                     <option value="">Please Select</option>
@@ -181,12 +184,7 @@ const ContactFormik = useFormik({
                     <option value="200+">200+</option>
                 </select>
                 {ContactFormik.touched.comsize && ContactFormik.errors.comsize && (<p className="text-red-500 text-xs">{ContactFormik.errors.comsize}</p>)}
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium">Company name</label>
-                <input type="text" name='comname' value={ContactFormik.values.comname} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
-                {ContactFormik.touched.comname && ContactFormik.errors.comname && (<p className="text-red-500 text-xs">{ContactFormik.errors.comname}</p>)}
-              </div>
+              </div> */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block mb-2 text-sm font-medium">First name</label>
@@ -198,6 +196,11 @@ const ContactFormik = useFormik({
                   <input type="text" name='lastname' value={ContactFormik.values.lastname} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
                   {ContactFormik.touched.lastname && ContactFormik.errors.lastname && (<p className="text-red-500 text-xs">{ContactFormik.errors.lastname}</p>)}
                 </div>
+              </div>
+              <div>
+                <label className="block mb-2 text-sm font-medium">Subject</label>
+                <input type="text" name='subject' value={ContactFormik.values.subject} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                {ContactFormik.touched.subject && ContactFormik.errors.subject && (<p className="text-red-500 text-xs">{ContactFormik.errors.subject}</p>)}
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -212,7 +215,7 @@ const ContactFormik = useFormik({
                 </div>
               </div>
               <div>
-                <label className="block mb-2 text-sm font-medium">Can you share more about your business needs and challenges?
+                <label className="block mb-2 text-sm font-medium">Description
                 </label>
                 <textarea rows="5" name="message" value={ContactFormik.values.message} onChange={ContactFormik.handleChange} onBlur={ContactFormik.handleBlur} className="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"></textarea>
                 {ContactFormik.touched.message && ContactFormik.errors.message && (<p className="text-red-500 text-xs">{ContactFormik.errors.message}</p>)}
