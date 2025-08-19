@@ -60,9 +60,9 @@ const Introduction = () => {
 
                 {/* Foreground Text */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 2xl:px-8 px-3 xl:w-[50%] md:w-[70%] w-full m-auto flex items-center justify-center  flex-col ">
-                    <h2 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white text-center md:mb-5 mb-3 2xl:leading-[60px]" data-aos="fade-up">OpenAI, <span className="text-themedark fond-extrabold">NVIDIA</span> Propel AI Innovation With New Optimized Open Models</h2>
-                    <p className="text-[#f0f0f0] text-center sm:text-base text-xs  md:mb-5 mb-3  px-5" data-aos="fade-up" >New <span className="text-themedark">NVIDIA</span> technologies are enabling instant world reconstruction, spatial reasoning, and large-scale simulation on NVIDIA DGX Cloud and NVIDIA RTX PRO Blackwell servers.</p>
-                    <p className="text-[#f0f0f0] text-center sm:text-base text-xs md:mb-5 mb-3  px-5" data-aos="fade-up">Advanced blueprints, vision language models and synthetic data generation extensions from <span className="text-themedark">NVIDIA</span> Metropolis enhance productivity and improve safety across environments..</p>
+                    <h2 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white text-center md:mb-5 mb-3 2xl:leading-[60px]" data-aos="fade-up">Build with <span className="text-themedark">AI</span> to drive measurable business outcomes</h2>
+                    <p className="text-[#f0f0f0] text-center sm:text-base text-xs  md:mb-5 mb-3  px-5" data-aos="fade-up" >We design and deliver end‑to‑end AI solutions—strategy, models, and platforms—optimized for performance, security, and cost across cloud and on‑prem.</p>
+                    <p className="text-[#f0f0f0] text-center sm:text-base text-xs md:mb-5 mb-3  px-5" data-aos="fade-up">From computer vision and generative AI to analytics and automation, our teams accelerate time‑to‑value and help you scale responsibly.</p>
                     <Link to="/contact" className="md:w-[200px] w-[100px] bg-themedark rounded-full text-white hover:bg-white hover:text-themedark hover:font-extrabold mt-[20px]  cursor-pointer" data-aos="fade-up">
                         <p className="p-3 md:text-lg text-sm text-center">Contact Us</p>
                     </Link>
@@ -74,7 +74,7 @@ const Introduction = () => {
                     <div data-aos="fade-up">
                         <h1 className="2xl:text-5xl md:text-3xl  text-2xl font-semibold text-white md:mb-5 mb-3 2xl:leading-[60px] ">
                             
-                        Empowering Business Outcomes <br></br>with  <span className="text-themedark fond-extrabold"> AI & Data Analytics</span>
+                        Empowering Business Outcomes <br></br>with  <span className="text-themedark "> AI & Data Analytics</span>
                         </h1>
 
                         
