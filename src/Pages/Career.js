@@ -205,7 +205,7 @@ const Career = () => {
     <div className='overflow-hidden'>
     <section className="bg-black text-white" data-aos="zoom-in" data-aos-duration="3000">
         <div className="container mx-auto sm:!px-6 !px-4 py-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Come Work With Us</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Come <span className='text-themedark'>Work</span> With Us</h1>
             <p className="text-lg max-w-2xl mx-auto">Help shape the future alongside a dedicated team. We're seeking driven individuals to grow and innovate together.</p>
         </div>
     </section>
@@ -326,7 +326,7 @@ const Career = () => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 text-white">
             <div className='w-full' data-aos="zoom-in" data-aos-duration="3000">
                 <p className="tracking-widest text-sm">[ OUR PRINCIPLES ]</p>
-                <h1 className="text-3xl md:text-[40px] font-semibold mt-2">Coding ≥ ∀ x ∀ x</h1>
+                <h1 className="text-3xl md:text-[40px] font-semibold mt-2"> <span className='text-themedark'>Coding</span> ≥ ∀ x ∀ x</h1>
             </div>
             <p className="md:max-w-lg w-full" data-aos="zoom-in" data-aos-duration="3000">We are driven by ambitious goals, fast execution, and a strong sense of urgency. Join us if you want to shape the next generation of AI models and products.</p>
         </div>
