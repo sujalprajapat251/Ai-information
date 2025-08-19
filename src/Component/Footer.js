@@ -8,6 +8,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { FiChevronRight } from "react-icons/fi";
 import { IoMdMail } from "react-icons/io";
 import canada from '../Asset/canada.svg'
+import logo from '../Asset/logo.png'
 
 
 import gemini from '../Asset/Footer/Gemini.svg'
@@ -18,6 +19,7 @@ import lyria from '../Asset/Footer/Lyria.svg'
 import alphaFold from '../Asset/Footer/Alphafold.svg'
 import synthId from '../Asset/Footer/SynthId.svg'
 import weatherNext from '../Asset/Footer/Weathernext.svg'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -33,6 +35,7 @@ const Footer = () => {
       <a href="#"><FaGithub className='text-3xl' /></a>
     </div> */}
     <div className="flex flex-col lg:flex-row gap-10">
+      <img src={logo} alt="" className='w-28 h-20' />
       <div className='w-full lg:w-1/3'>
         <h2 className="text-2xl lg:text-3xl font-semibold mb-2">Build AI responsibly to<br />benefit humanity</h2>
       </div>
@@ -41,66 +44,65 @@ const Footer = () => {
           <h3 className="text-sm tracking-wide mb-1">Models</h3>
           <p className='text-sm text-[#9aa0a6] font-medium mb-4'>Build with our next generation AI systems</p>
           <ul className="space-y-2 text-xl">
-            <li><img src={gemini} alt="" className='w-8 me-2 inline-block' /><span>Gemini</span></li>
-            <li><img src={gemma} alt="" className='w-8 me-2 inline-block' /><span>Gemma</span></li>
+            <li><a href="http://yoyoai.ca/"><img src={gemini} alt="" className='w-8 me-2 inline-block' /><span>Gemini</span></a></li>
+            {/* <li><img src={gemma} alt="" className='w-8 me-2 inline-block' /><span>Gemma</span></li>
             <li><img src={veo} alt="" className='w-8 me-2 inline-block'/> <span>Veo</span></li>
             <li><img src={imagen} alt="" className='w-8 me-2 inline-block' /><span>Imagen</span></li>
-            <li><img src={lyria} alt="" className='w-8 me-2 inline-block' /><span>Lyria</span></li>
+            <li><img src={lyria} alt="" className='w-8 me-2 inline-block' /><span>Lyria</span></li> */}
           </ul>
         </div>
         <div>
           <h3 className="text-sm tracking-wide text-[#f1f3f4] mb-4">Learn more</h3>
           <ul className="space-y-2 text-xl">
-            <li><a href="#">About</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Research</a></li>
-            <li><a href="#">Responsibility & Safety</a></li>
+          <li><Link to={'/'} >Home</Link></li>
+            <li><Link to={'/about'} >About</Link></li>
+            <li><Link to={'/career'} >Careers</Link></li>
+            <li><Link to={'/contact'}>Contact Us </Link></li>
           </ul>
         </div>
       </div>
       <div className='w-full lg:w-1/3'>
-        <h3 className="text-sm tracking-wide mb-4">Science</h3>
+        {/* <h3 className="text-sm tracking-wide mb-4">Science</h3>
         <p className='text-sm text-[#9aa0a6] font-medium mb-4'>Unlocking a new era of discovery with AI
         </p>
         <ul className="space-y-2 text-xl mb-6">
           <li><img src={alphaFold} alt="" className='w-8 inline-block' /> AlphaFold</li>
           <li><img src={synthId} alt="" className='w-8 inline-block' /> SynthID</li>
           <li><img src={weatherNext} alt="" className='w-8 inline-block'/> WeatherNext</li>
-        </ul>
-        <div class="bg-black text-white rounded-lg max-w-md mb-4">
-          <div class="flex items-center gap-2 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+        </ul> */}
+        <div className="bg-black text-white rounded-lg max-w-md mb-4">
+          <div className="flex items-center gap-2 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-6 h-6" viewBox="0 0 24 24">
               <path d="M12 2l9 4.5v2h-18v-2l9-4.5zm9 8.5v11.5h-18v-11.5h18zm-11 2h-2v7h2v-7zm5 0h-2v7h2v-7z"/>
             </svg>
-            <h2 class="font-bold text-lg">India</h2>
+            <h2 className="font-bold text-lg">India</h2>
           </div>
-          <div class="flex items-center gap-2 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+          <div className="flex items-center gap-2 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
               <path d="M6.62 10.79a15.09 15.09 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.2.48 2.52.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.21 2.79 13.93 2.79 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.26 2.68.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/>
             </svg>
             <a href="tel:+919328881036" className="hover:underline">+91 93288 81036</a>
           </div>
-          <a href='https://www.google.com/maps/place/Kalathiya+Infotech/@21.2057926,72.8818075,132m/data=!3m1!1e3!4m9!1m2!2m1!1s102-103+Silver+Point,+Jivanjyot+Circle,+Nr+Yogi+chowk+Road+Surat+-395010!3m5!1s0x26cb5e4230fc8877:0xd36ccfe485cd6a01!8m2!3d21.2058961!4d72.8817848!16s%2Fg%2F11kbyh9bk6?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D' target="_blank" class="text-gray-300 mb-4">102–103 Silver Point, Jivanjyot Circle, <br />Nr Yogi chowk Road Surat –395010 <br />(Head Office)</a><br />
-          <a href='https://www.google.com/maps/place/Shyam+Mandir+Rd,+Hukmchand+Nagar,+Althan,+Surat,+Gujarat+395007/@21.1457601,72.8003485,1060m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3be05203d87284f1:0xc550f071f2d34a38!8m2!3d21.1457601!4d72.8003485!16s%2Fg%2F11f2v569v2?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D' target='_blank' class="text-gray-300">402–405 Astha Shoppers NearBy <br />BhagvanMahavir Collage, Vesu, Surat –395007 <br />(Branch)</a>
+          <a href='https://www.google.com/maps/place/Kalathiya+Infotech/@21.2057926,72.8818075,132m/data=!3m1!1e3!4m9!1m2!2m1!1s102-103+Silver+Point,+Jivanjyot+Circle,+Nr+Yogi+chowk+Road+Surat+-395010!3m5!1s0x26cb5e4230fc8877:0xd36ccfe485cd6a01!8m2!3d21.2058961!4d72.8817848!16s%2Fg%2F11kbyh9bk6?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D' target="_blank" className="text-gray-300 mb-4">102–103 Silver Point, Jivanjyot Circle, <br />Nr Yogi chowk Road Surat –395010 <br />(Head Office)</a><br />
+          <a href='https://www.google.com/maps/place/Shyam+Mandir+Rd,+Hukmchand+Nagar,+Althan,+Surat,+Gujarat+395007/@21.1457601,72.8003485,1060m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3be05203d87284f1:0xc550f071f2d34a38!8m2!3d21.1457601!4d72.8003485!16s%2Fg%2F11f2v569v2?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D' target='_blank' className="text-gray-300">402–405 Astha Shoppers NearBy <br />BhagvanMahavir Collage, Vesu, Surat –395007 <br />(Branch)</a>
         </div>
-        <div class=" text-white rounded-lg max-w-sm">
-          <div class="flex items-center space-x-2 mb-4">
-            <span class="text-white text-lg"><img src={canada} alt="" /></span>
-            <h2 class="font-semibold text-lg">Canada</h2>
+        <div className=" text-white rounded-lg max-w-sm">
+          <div className="flex items-center space-x-2 mb-4">
+            <span className="text-white text-lg"><img src={canada} alt="" /></span>
+            <h2 className="font-semibold text-lg">Canada</h2>
           </div>
-          <div class="flex items-center space-x-3 mb-4">
-            <span class="text-white text-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+          <div className="flex items-center space-x-3 mb-4">
+            <span className="text-white text-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
                 <path d="M6.62 10.79a15.09 15.09 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.2.48 2.52.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.21 2.79 13.93 2.79 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.26 2.68.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/>
               </svg>
             </span>
-            <p class="text-sm text-gray-200">+1 5198817124</p>
+            <a href="tel:+1 5198817124" className="text-sm text-gray-200">+1 5198817124</a>
           </div>
           <a href='https://www.google.com/maps/place/855+King+St+E+%23210,+Cambridge,+ON+N3H+3P2,+Canada/@43.3946841,-80.3558498,826m/data=!3m2!1e3!4b1!4m5!3m4!1s0x882b89f0377066e3:0x13fe980777df8121!8m2!3d43.3946841!4d-80.3558498?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D' target='_blank' className=" text-gray-300 mb-3">855 King Street East, Unit 210 <br />Cambridge, ON, Canada (Branch)</a>
-          <div class="flex items-center space-x-3 mt-3">
-            <span class="text-white text-xl"><IoMdMail /></span>
-            <p class=" text-gray-200">info@kalathiyainfotech.com</p>
+          <div className="flex items-center space-x-3 mt-3">
+            <span className="text-white text-xl"><IoMdMail /></span>
+            <a href="mailto:info@kalathiyainfotech.com" className=" text-gray-200">info@kalathiyainfotech.com</a>
           </div>
         </div>
       </div>
