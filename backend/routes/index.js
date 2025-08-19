@@ -1,10 +1,9 @@
 var express = require("express");
-const { getSubmitForm, getAllForms } = require('../controller/contactUsController');
+const { addContactUs, getContactUs } = require('../controller/contactUsController');
 
 var indexRoute = express.Router();
 
-indexRoute.post('/getForm', getSubmitForm);
-indexRoute.get('/All', getAllForms);
-
+indexRoute.post('/contactus', addContactUs);
+indexRoute.get('/contactus', getContactUs);
 
 module.exports = indexRoute;

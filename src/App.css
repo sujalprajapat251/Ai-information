@@ -8,7 +8,7 @@
 
 /* Width of scrollbar */
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 2px;
 }
 
 /* Track (background of scrollbar) */
@@ -19,10 +19,11 @@
 
 /* Thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background: url("./Asset/Home/robot1.png") no-repeat center;
+  /* background: url("./Asset/Home/robot1.png") no-repeat center; */
+  background-color: blueviolet;
   background-size: contain;
   border-radius: 8px;
-  width: 30px;
+  width: 2px;
 }
 
 /* Optional: hover effect on thumb */

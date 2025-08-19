@@ -1,28 +1,16 @@
 const contactUs = require("../model/contactUs")
 
 // @POST Submit Form
-const getSubmitForm = async (req, res) => {
-//   try {
-//     const newForm = new Form(req.body);
-//     console.log(newForm);
-    
-//     const savedForm = await newForm.save();
-//     res.status(201).json({ success: true, data: savedForm });
-//   } catch (error) {
-//     res.status(400).json({ success: false, message: error.message });
-//   }
-
+const addContactUs = async (req, res) => {
   try {
-    const { companySize, companyName, firstName, lastName, workEmail, phoneNumber,businessNeeds  } = req.body;
-    
+    const {firstName, lastName, workEmail, phoneNumber,description} = req.body;
     const contact = new contactUs({
-        companySize,
-        companyName,
         firstName,
         lastName,
         workEmail,
         phoneNumber,
-        businessNeeds
+        description,
+        date: new Date()
     })
     const savedContactUs = await contact.save()
     res.status(201).json({
@@ -38,18 +26,16 @@ const getSubmitForm = async (req, res) => {
     })
 }
 };
-
 // @GET All Forms (for testing/admin)
-const getAllForms = async (req, res) => {
+const getContactUs = async (req, res) => {
   try {
-    const forms = await Form.find();
-    res.json({ success: true, data: forms });
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    const contacts = await contactUs.find();
+    res.render("contacts", { title: "All Contacts", contacts });
+  } catch (err) {
+    res.status(500).send(err.message);
   }
 };
-
 module.exports = {
-    getSubmitForm,
-    getAllForms,
-}
+  addContactUs,
+  getContactUs
+};
