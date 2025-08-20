@@ -9,9 +9,9 @@ import img3 from "../Asset/About/about_bg3.webp";
 import { FaArrowRight } from "react-icons/fa";
 
 const cardData = [
-  { title: "AlphaProteo", text: "New AI system designs proteins that successfully bind to target molecules, with" , img:img1 },
-  { title: "AlphaGeometry", text: "Breakthrough AI performance solving complex math problems" , img:img2 },
-  { title: "AlphaMissense", text: "New AI tool classifies the effects of 71 million ‘missense’ mutations" , img:img3 },
+  { title: "AlphaProteo", text: " focuses on understanding and modeling protein structures to accelerate breakthroughs in biology and medicine." , img:img1 },
+  { title: "AlphaGeometry", text: "applies advanced algorithms to solve complex geometric problems with precision and efficiency." , img:img2 },
+  { title: "AlphaMissense", text: "uses AI to predict the impact of genetic mutations on protein function, aiding in disease research." , img:img3 },
 ];
 
 const AboutCard = () => {
