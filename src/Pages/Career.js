@@ -299,7 +299,7 @@ const Career = () => {
                     style={{ boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}} data-aos="flip-left" data-aos-duration="3000">
                     <h3 className="text-xl font-semibold mb-2">Frontend Developer</h3>
                     <p className="mb-4 text-gray-400">Remote • Full-time</p>
-                    <p className="mb-6 text-gray-300">Work with the latest web technologies to build user-friendly interfaces.</p>
+                    <p className="mb-6 text-gray-300">Use modern web technologies to create responsive, user-focused interfaces.</p>
                     <a href="#" className="inline-block px-4 py-2 border border-gray-500 rounded-lg transition">Apply Now</a>
                 </div>
 
@@ -307,7 +307,7 @@ const Career = () => {
                     style={{ boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}} data-aos="flip-left" data-aos-duration="3000">
                     <h3 className="text-xl font-semibold mb-2">UI/UX Designer</h3>
                     <p className="mb-4 text-gray-400">New York, NY • Hybrid</p>
-                    <p className="mb-6 text-gray-300">Design beautiful and intuitive experiences for our products.</p>
+                    <p className="mb-6 text-gray-300">Craft visually appealing and easy-to-use product experiences.</p>
                     <a href="#" className="inline-block px-4 py-2 border border-gray-500 rounded-lg transition">Apply Now</a>
                 </div>
 
@@ -315,7 +315,7 @@ const Career = () => {
                     style={{boxShadow: "0 8px 25px rgba(0,0,0,0.4)"}} data-aos="flip-left" data-aos-duration="3000">
                     <h3 className="text-xl font-semibold mb-2">Backend Engineer</h3>
                     <p className="mb-4 text-gray-400">Remote • Full-time</p>
-                    <p className="mb-6 text-gray-300">Build scalable APIs and ensure performance and security.</p>
+                    <p className="mb-6 text-gray-300">Develop robust APIs with a focus on scalability, speed, and security.</p>
                     <a href="#" className="inline-block px-4 py-2 border border-gray-500 rounded-lg transition">Apply Now</a>
                 </div>
             </div>
@@ -328,7 +328,7 @@ const Career = () => {
                 <p className="tracking-widest text-sm">[ OUR PRINCIPLES ]</p>
                 <h1 className="text-3xl md:text-[40px] font-semibold mt-2"> <span className='text-themedark'>Coding</span> ≥ ∀ x ∀ x</h1>
             </div>
-            <p className="md:max-w-lg w-full" data-aos="zoom-in" data-aos-duration="3000">We are driven by ambitious goals, fast execution, and a strong sense of urgency. Join us if you want to shape the next generation of AI models and products.</p>
+            <p className="md:max-w-lg w-full" data-aos="zoom-in" data-aos-duration="3000">We thrive on bold objectives, rapid execution, and a relentless drive to move fast. If you're eager to help build the future of AI models and products, we'd love to have you on board.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gx-8 mt-16 pt-2 sm:pt-12">
