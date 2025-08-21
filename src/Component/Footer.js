@@ -35,11 +35,15 @@ const Footer = () => {
       <a href="#"><FaGithub className='text-3xl' /></a>
     </div> */}
     <div className="flex flex-col lg:flex-row gap-10">
+      <div className='flex w-full lg:w-1/3'>
       <img src={logo} alt="" className='w-28 h-20' />
-      <div className='w-full lg:w-1/3'>
-        <h2 className="text-2xl lg:text-3xl font-semibold mb-2">Build AI responsibly to<br />benefit humanity</h2>
+      <div className=''>
+        <h2 className="sm:text-2xl text-xl lg:text-3xl font-semibold mb-2 text-[#9aa0a6]">Build AI responsibly to<br />benefit humanity</h2>
       </div>
-      <div className="w-full sm:w-2/3 lg:w-1/3 flex flex-col sm:flex-row lg:flex-col gap-12">
+      </div>
+      <div className='md:flex lg:w-1/2 w-full justify-between'>
+
+      <div className="w-full sm:w-2/3 xl:w-1/3 flex flex-col sm:flex-row lg:flex-col gap-6">
         <div>
           <h3 className="text-sm tracking-wide mb-1">Models</h3>
           <p className='text-sm text-[#9aa0a6] font-medium mb-4'>Build with our next generation AI systems</p>
@@ -51,17 +55,17 @@ const Footer = () => {
             <li><img src={lyria} alt="" className='w-8 me-2 inline-block' /><span>Lyria</span></li> */}
           </ul>
         </div>
-        <div>
+        <div className='xl:me-0 sm:me-auto'>
           <h3 className="text-sm tracking-wide text-[#f1f3f4] mb-4">Learn more</h3>
           <ul className="space-y-2 text-xl">
           <li><Link to={'/'} >Home</Link></li>
             <li><Link to={'/about'} >About</Link></li>
-            <li><Link to={'/career'} >Careers</Link></li>
+            <li><Link to={'/career'} >Career</Link></li>
             <li><Link to={'/contact'}>Contact Us </Link></li>
           </ul>
         </div>
       </div>
-      <div className='w-full lg:w-1/3'>
+      <div className='lg:w-1/3 mt-6'>
         {/* <h3 className="text-sm tracking-wide mb-4">Science</h3>
         <p className='text-sm text-[#9aa0a6] font-medium mb-4'>Unlocking a new era of discovery with AI
         </p>
@@ -106,14 +110,15 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      </div>
     </div>
-    <div className="border-t border-gray-800 mt-8 pt-6 flex flex-wrap gap-4 text-sm text-gray-400">
+    {/* <div className="border-t border-gray-800 mt-8 pt-6 flex flex-wrap gap-4 text-sm text-gray-400">
       <span className='text-2xl'>Google</span>
       <a href="#" className="hover:text-gray-200 text-lg">About Google</a>
       <a href="#" className="hover:text-gray-200 text-lg">Google products</a>
       <a href="#" className="hover:text-gray-200 text-lg">Privacy</a>
       <a href="#" className="hover:text-gray-200 text-lg">Terms</a>
-    </div>
+    </div> */}
   </footer>
 </div>
 

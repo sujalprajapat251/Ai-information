@@ -30,7 +30,7 @@ useEffect(() => {
     <section className='bg-black overflow-hidden'>
          <div className='sm:pt-10 pt-5'>
               <div className='container mx-auto'>
-                 <div className='flex lg:flex-nowrap flex-wrap rounded-[30px] overflow-hidden 2xl:mx-10 mx-5'>
+                 <div className='flex gap-4 lg:flex-nowrap flex-wrap rounded-[30px] overflow-hidden 2xl:mx-10 mx-5'>
                    <div className="lg:w-1/2 w-full relative overflow-hidden" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                       <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${   hovered ? "opacity-100" : "opacity-0" }`}>
                          <img src={team} alt="Team Merged" className="w-full h-full object-cover"/>

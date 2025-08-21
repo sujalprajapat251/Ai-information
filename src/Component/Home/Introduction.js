@@ -80,7 +80,7 @@ const Introduction = () => {
                         
 
                         <p className="text-[#f0f0f0]  sm:text-base text-xs md:mb-5 mb-3  " data-aos="fade-up" >
-                        Generative AI and sophisticated data analytics—built on a cloud infrastructure—are profoundly transforming business. This shift is irreversible. Future opportunities will drive companies toward becoming more interconnected, intelligent, and autonomous. They will form a digitally interwoven ecosystem where enterprises collaborate symbiotically to deliver value to consumers, citizens, and customers through strategic partnerships.
+                        Cloud-based generative AI and advanced data analytics are revolutionizing the commercial world. This change cannot be undone. Opportunities in the future will push businesses to become more intelligent, autonomous, and networked. Through strategic collaborations, they will create a digitally integrated ecosystem in which businesses work together symbiotically to provide value to customers, residents, and consumers.
                         </p>
 
                    

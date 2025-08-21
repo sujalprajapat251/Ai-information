@@ -216,13 +216,13 @@ const Career = () => {
                 <img src={career} alt="Team" className="rounded-2xl shadow-2xl w-full" style={{ boxShadow: "0 15px 35px rgba(0,0,0,0.6)" }}/>
             </div>
             <div className="flex-1" data-aos="zoom-in" data-aos-duration="3000">
-                <h2 className="text-3xl font-semibold mb-4">Why Work With Us?</h2>
-                <p className="mb-6 text-gray-300">We foster an inclusive environment where innovation thrives. From flexible schedules to career development, we support our team every step of the way.</p>
+                <h2 className="text-3xl font-semibold mb-4">Why Become a Member of Our Team?</h2>
+                <p className="mb-6 text-gray-300">We create a warm, accepting environment where originality and creativity can thrive. We are dedicated to supporting our employees' success at every level by providing them with flexible work arrangements and ongoing assistance for their professional development.</p>
                 <ul className="space-y-3 text-lg">
-                    <li className="flex items-center gap-2"><GiCheckMark /> Collaborative team culture</li>
-                    <li className="flex items-center gap-2"><GiCheckMark /> Flexible work hours</li>
-                    <li className="flex items-center gap-2"><GiCheckMark /> Remote-friendly environment</li>
-                    <li className="flex items-center gap-2"><GiCheckMark /> Opportunities for growth</li>
+                    <li className="flex items-center gap-2"><GiCheckMark /> A culture based on cooperation and teamwork</li>
+                    <li className="flex items-center gap-2"><GiCheckMark /> Schedule flexibility to accommodate your lifestyle</li>
+                    <li className="flex items-center gap-2"><GiCheckMark /> Workplace that is conducive to remote work</li>
+                    <li className="flex items-center gap-2"><GiCheckMark /> Unambiguous learning and professional advancement pathways</li>
                 </ul>
             </div>
         </div>
@@ -334,12 +334,12 @@ const Career = () => {
         <div className="grid md:grid-cols-3 gx-8 mt-16 pt-2 sm:pt-12">
             {/* <div className="flex flex-col gap-12  "> */}
                 <div data-aos="zoom-in" data-aos-duration="3000" className='md:border-r  text-white border-gray-800 pr-8 p-4'>
-                    <div className="text-2xl mb-12"><FaRegUser className='text-3xl' /></div>
+                    <div className="text-2xl mb-7"><FaRegUser className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">Attractive Compensation</h3>
                     <p className="text-gray-400 text-md mt-1">We offer competitive salary and equity packages designed to attract and retain the best talent in the industry.</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-duration="3000" className='md:border-r  text-white border-gray-800 pr-8  p-4'>
-                    <div className="text-2xl mb-12"><IoCalendarOutline className='text-3xl' /></div>
+                    <div className="text-2xl mb-7"><IoCalendarOutline className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">Flexible Time Off</h3>
                     <p className="text-gray-400 text-md mt-1">	We believe in a healthy work-life balance. Take the time you need to recharge — no burnout here.</p>
                 </div>
@@ -347,12 +347,12 @@ const Career = () => {
 
             {/* <div className="flex flex-col gap-12 md:border-r text-white border-gray-800 pr-8"> */}
                 <div data-aos="zoom-in" data-aos-duration="3000" className='p-4 text-white'>
-                    <div className="text-2xl mb-12"><LuStethoscope className='text-3xl' /></div>
+                    <div className="text-2xl mb-7"><LuStethoscope className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">Health & Wellness</h3>
                     <p className="text-gray-400 text-md mt-1">We provide extensive health coverage, including medical, dental, vision, and disability insurance to support your overall well-being.</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-duration="3000" className='md:border-r  text-white border-gray-800 pr-8 p-4'>
-                    <div className="text-2xl mb-12"><TbWorld className='text-3xl' /></div>
+                    <div className="text-2xl mb-7"><TbWorld className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">Visa Support</h3>
                     <p className="text-gray-400 text-md mt-1">We welcome global talent and offer visa sponsorship to help you become part of our team.</p>
                 </div>
@@ -360,12 +360,12 @@ const Career = () => {
 
             {/* <div className="flex flex-col gap-12 text-white"> */}
                 <div data-aos="zoom-in" data-aos-duration="3000" className='md:border-r  text-white border-gray-800 pr-8 p-4'>
-                    <div className="text-2xl mb-12"><GiSelfLove className='text-3xl' /></div>
+                    <div className="text-2xl mb-7"><GiSelfLove className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">	Life & Family Support	</h3>
                     <p className="text-gray-400 text-md mt-1">Our benefits include life and AD&D insurance as well as fertility support, ensuring peace of mind for you and your loved ones.</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-duration="3000" className='text-white p-4' >
-                    <div className="text-2xl mb-12"><FaRegClock className='text-3xl' /></div>
+                    <div className="text-2xl mb-7"><FaRegClock className='text-3xl' /></div>
                     <h3 className="font-semibold text-lg mb-4">Retirement Planning</h3>
                     <p className="text-gray-400 text-md mt-1">	Our 401(k) plan helps you prepare for a secure and comfortable financial future.				</p>
                 </div>

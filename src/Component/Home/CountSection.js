@@ -9,12 +9,12 @@ const CountSection = () => {
     var data = [
         { title: 'happy client', icon: happy, value: 15 },
         { title: 'Project completed', icon: project, value: 15 },
-        { title: 'experience', icon: experience, value: 7 },
+        { title: 'year experience', icon: experience, value: 7 },
         { title: 'developer', icon: developer, value: 500 },
     ]
 
     return (
-        <div className='container py-16'>
+        <div className='container capitalize py-16'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
                 {data.map((item, index) => {
                     return (

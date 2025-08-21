@@ -324,7 +324,7 @@ const Stories = () => {
 
                     </div>
                     <Link to="/contact" className='ms-[10px]'> 
-                        <button className="bg-white text-black px-4 py-2">Contact Us</button>
+                        <button className="bg-white text-black px-4 py-2 rounded-full hover:bg-[transparent] hover:text-[white] border transition-all duration-500">Contact Us</button>
                     </Link>
                 </header>
 
@@ -346,7 +346,7 @@ const Stories = () => {
                 </div>
 
 
-                <p className="mx-auto max-w-sm text-center text-2xl font-black text-neutral-400 md:text-4xl mb-8">
+                <p className="mx-auto max-w-sm text-center text-2xl font-black text-neutral-400 md:text-4xl md:mb-8  mb-4 mt-4 sm:mt-0">
                     {tab}
                 </p>
 
