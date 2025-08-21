@@ -1,17 +1,19 @@
 const contactUs = require("../model/contactUs")
-
+ 
 // @POST Submit Form
 const addContactUs = async (req, res) => {
   try {
-    const {firstName, lastName, workEmail, phoneNumber,description} = req.body;
+    const {firstName, lastName, workEmail,subject, phoneNumber,description} = req.body;
     const contact = new contactUs({
         firstName,
         lastName,
         workEmail,
+        subject,
         phoneNumber,
         description,
         date: new Date()
     })
+    console.log(firstName, lastName, workEmail,subject, phoneNumber,description)
     const savedContactUs = await contact.save()
     res.status(201).json({
         success: true,
@@ -19,7 +21,7 @@ const addContactUs = async (req, res) => {
         data: savedContactUs
     })
 } catch (error) {
-    res.stutus(400).json({
+    res.status(400).json({
         success: false,
         message: "Error creating Contact",
         error: error.message
@@ -39,3 +41,5 @@ module.exports = {
   addContactUs,
   getContactUs
 };
+ 
+ 

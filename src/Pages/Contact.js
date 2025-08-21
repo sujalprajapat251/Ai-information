@@ -106,6 +106,7 @@ const Contact = () => {
         firstName: values.firstname,
         lastName: values.lastname,
         workEmail: values.email,
+        subject : values.subject,
         phoneNumber: values.num,
         description: values.message,
       })
