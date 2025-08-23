@@ -48,7 +48,7 @@ const aiDetails = [
         ]
     },
     {
-        title: 'AI In Cybersecurity',
+        title: 'Conversational AI',
         img: ai4,
         description: [
             'Enables machines to comprehend and interact with human language.',

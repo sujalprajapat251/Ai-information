@@ -30,7 +30,7 @@ const accordionData = [
     {
       title: "Wearables with AR",
       content:
-        "We've unveiled our first AR glasses prototype after over a decade of development. It debuted at Meta Connect 2024 and was wireless, lightweight (less than 100 grams), and had a wide field of vision display. The development of future consumer-ready AR glasses will be guided by ongoing testing.",
+        "We've unveiled our first AR glasses prototype after over a decade of development. It was wireless, lightweight, and had a wide field of vision display. The development of future consumer-ready AR glasses will be guided by ongoing testing.",
     },
     {
         title: "AI Studio",
@@ -76,7 +76,7 @@ useEffect(() => {
             <div className='container mx-auto py-12 sm:!px-6 !px-4'>
                <div className="flex justify-center" data-aos="zoom-in" data-aos-duration="3000">
                    <div className="3xl:w-1/3 lg:w-1/2  text-white">
-                      <h3 className="text-center text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] leading-[28px] mt-4">We Craft <span className='text-themedark'>Exceptional</span>Moments</h3> 
+                      <h3 className="text-center text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] leading-[28px] mt-4">We Craft <span className='text-themedark'>Exceptional </span>Moments</h3> 
                       <p className='text-center mt-4 sm:text-[16px] text-[14px]'>Our work inspires awe and connection that transcends technology. We're pushing the envelope and influencing how AI affects the metaverse with our Llama open-source language models, state-of-the-art virtual reality equipment, and Ray-Ban Meta smart glasses.</p>
                    </div>
                </div>

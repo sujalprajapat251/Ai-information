@@ -205,8 +205,8 @@ const Career = () => {
     <div className='overflow-hidden'>
     <section className="bg-black text-white" data-aos="zoom-in" data-aos-duration="3000">
         <div className="container mx-auto sm:!px-6 !px-4 py-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Join in our group to<span className='text-themedark'>Work</span></h1>
-            <p className="text-lg max-w-2xl mx-auto">Join a group of people that help in changing future.We sre looking to add people in commit and motivate them to develop</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Join in our group to <span className='text-themedark'>Work</span></h1>
+            <p className="text-lg max-w-2xl mx-auto">Join a group of people that help in changing future. We are looking to add people in commit and motivate them to develop</p>
         </div>
     </section>
 
@@ -217,7 +217,7 @@ const Career = () => {
             </div>
             <div className="flex-1" data-aos="zoom-in" data-aos-duration="3000">
                 <h2 className="text-3xl font-semibold mb-4">What Makes You Join Our Team?</h2>
-                <p className="mb-6 text-gray-300">We create a welcoming atmostphere that inspire  uniqueness,originality, and personal identity. By providing flexible work time-table and continuos support for there proffessional growth, We try to give our employees get success in an fronts.</p>
+                <p className="mb-6 text-gray-300">We create a welcoming atmostphere that inspire uniqueness, originality and personal identity. By providing flexible work time-table and continuos support for there proffessional growth, We try to give our employees get success in an fronts.</p>
                 <ul className="space-y-3 text-lg">
                     <li className="flex items-center gap-2"><GiCheckMark /> A cooperative and team-oriented culture.</li>
                     <li className="flex items-center gap-2"><GiCheckMark /> Flexibility in your schedule to fit your lifestyle.</li>
