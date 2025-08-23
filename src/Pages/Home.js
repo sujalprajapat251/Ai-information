@@ -22,7 +22,8 @@ const Home = () => {
             </div>
             <div className="lg:w-1/2 w-full lg:px-[50px] px-5">
               <div className='text-white'>
-                <h3 className='text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] mt-4' data-aos="fade-left">We interact with the AI community over the course of the year through a variety of online, live, and hybrid events, either as sponsors or as hosts. </h3>
+                <h3 className='text-white text-[22px] sm:text-[32px] md:text-[40px] lg:text-[40px] sm:leading-[48px] sx:leading-[28px] mt-4' data-aos="fade-left">We interact with the AI community</h3>
+                <p className='text-xl pt-4' data-aos="fade-left">over the course of the year through a variety of online, live, and hybrid events, either as sponsors or as hosts. </p>
                 <p className='mt-5' data-aos="fade-left">Our engineers and researchers showcase our most recent publications, research accomplishments, and product breakthroughs at these forums.</p>
               </div>
             </div>
