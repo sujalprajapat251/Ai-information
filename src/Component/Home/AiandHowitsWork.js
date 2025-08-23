@@ -88,9 +88,8 @@ const steps = [
         icon: step1,
         title: "Safely connect your tools",
         description: [
-            "datasets or APIs after making your account in few minutes ",
-            "In order to protect personal data and enable, seamless integration ",
-            "For safety"
+            "Datasets or APIs after making your account in few minutes.",
+            "In order to protect personal data and enable, seamless integration for safety.",
         ]
     },
     {
@@ -99,10 +98,8 @@ const steps = [
         icon: step2,
         title: "After exploring your data",
         description: [
-            " our advanced algorithms find important trends",
-            "By Ai's skills",
-            " we utilized your data",
-            "which helps you to make beneficial decisions quickly."
+            " Our advanced algorithms find important trends by Ai's skills",
+            " We utilized your data which helps you to make beneficial decisions quickly.",
         ]
     },
     {
@@ -111,8 +108,7 @@ const steps = [
         icon: step3,
         title: "After exploring your data",
         description: [
-            "our worldly-wise algorithms find pattern",
-            "trends and upcoming trends to give you helpful suggestions.",
+            "Our worldly-wise algorithms find pattern trends and upcoming trends to give you helpful suggestions.",
             "We help you make well-informed decisions quickly by providing predictive analytics and automated workflows."
         ]
     },
@@ -122,8 +118,8 @@ const steps = [
         icon: step4,
         title: "As time goes ",
         description: [
-            "our AI gets more precise as it everytime adjust based on every contact ",
-            "Without any extra effort you can see continuously improvement in your result "
+            "Our AI gets more precise as it everytime adjust based on every contact.",
+            "Without any extra effort you can see continuously improvement in your result."
         ]
     }
 ];

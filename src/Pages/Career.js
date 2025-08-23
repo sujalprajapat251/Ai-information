@@ -219,10 +219,10 @@ const Career = () => {
                 <h2 className="text-3xl font-semibold mb-4">What Makes You Join Our Team?</h2>
                 <p className="mb-6 text-gray-300">We create a welcoming atmostphere that inspire  uniqueness,originality, and personal identity. By providing flexible work time-table and continuos support for there proffessional growth, We try to give our employees get success in an fronts.</p>
                 <ul className="space-y-3 text-lg">
-                    <li className="flex items-center gap-2"><GiCheckMark /> A cooperative and team-oriented culture</li>
-                    <li className="flex items-center gap-2"><GiCheckMark /> Flexibility in your schedule to fit your lifestyle</li>
+                    <li className="flex items-center gap-2"><GiCheckMark /> A cooperative and team-oriented culture.</li>
+                    <li className="flex items-center gap-2"><GiCheckMark /> Flexibility in your schedule to fit your lifestyle.</li>
                     <li className="flex items-center gap-2"><GiCheckMark /> An surrounding that support work lightly.</li>
-                    <li className="flex items-center gap-2"><GiCheckMark /> Make a clear way for education and carrer progression</li>
+                    <li className="flex items-center gap-2"><GiCheckMark /> Make a clear way for education and carrer progression.</li>
                 </ul>
             </div>
         </div>
