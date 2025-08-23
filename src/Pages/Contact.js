@@ -93,7 +93,7 @@ const Contact = () => {
         .email("Invalid email address")
         .required("Email is required"),
       num: Yup.string()
-        .matches(/^\+?[0-9]{10,15}$/, "Phone number must be 10–15 digits")
+        .matches(/^\+?[0-9]{10}$/, "Phone number must be 10 digits")
         .required("Phone number is required"),
       message: Yup.string()
         .min(10, "Message must be at least 10 characters")
